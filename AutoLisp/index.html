@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.gif?v=5.1.3">
+
+
+
+
+
+
+  <meta name="keywords" content="autolisp,autocad," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Yinkit Lee" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="1 引言 LISP: LISt Processing language AutoCAD支持AutoLISP，但不支持许多Visual LISP functions 或 Microsoft ActiveX Automation interface 没有一个集成开发环境 Application Programming Interface (API)  使用AutoLISP语言AutoLISP基础 能够">
+<meta name="keywords" content="autolisp,autocad">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AutoLISP 开发者指南">
+<meta property="og:url" content="https://yumuzi.github.io/AutoLisp/index.html">
+<meta property="og:site_name" content="Yinkit Lee">
+<meta property="og:description" content="1 引言 LISP: LISt Processing language AutoCAD支持AutoLISP，但不支持许多Visual LISP functions 或 Microsoft ActiveX Automation interface 没有一个集成开发环境 Application Programming Interface (API)  使用AutoLISP语言AutoLISP基础 能够">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2016-06-29T10:58:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AutoLISP 开发者指南">
+<meta name="twitter:description" content="1 引言 LISP: LISt Processing language AutoCAD支持AutoLISP，但不支持许多Visual LISP functions 或 Microsoft ActiveX Automation interface 没有一个集成开发环境 Application Programming Interface (API)  使用AutoLISP语言AutoLISP基础 能够">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://yumuzi.github.io/AutoLisp/"/>
+
+
+
+
+
+  <title>AutoLISP 开发者指南 | Yinkit Lee</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Yinkit Lee</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yumuzi.github.io/AutoLisp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yinkit Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yinkit Lee">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">AutoLISP 开发者指南</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-29T14:38:47+08:00">
+                2016-04-29
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2016-06-29T18:58:29+08:00">
+                2016-06-29
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/AutoLisp/" class="leancloud_visitors" data-flag-title="AutoLISP 开发者指南">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,701
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-引言"><a href="#1-引言" class="headerlink" title="1 引言"></a>1 引言</h2><ul>
+<li><strong>LISP: LISt Processing language</strong></li>
+<li>AutoCAD支持AutoLISP，但不支持许多Visual LISP functions 或 Microsoft ActiveX Automation interface</li>
+<li>没有一个集成开发环境</li>
+<li>Application Programming Interface (API)</li>
+</ul>
+<h2 id="使用AutoLISP语言"><a href="#使用AutoLISP语言" class="headerlink" title="使用AutoLISP语言"></a>使用AutoLISP语言</h2><h3 id="AutoLISP基础"><a href="#AutoLISP基础" class="headerlink" title="AutoLISP基础"></a>AutoLISP基础</h3><ul>
+<li>能够使用 number, string and list-handing functions 来自定义AutoCAD</li>
+<li>AutoLISP不需要编译，能够在命令行直接输入代码，并立即看到结果</li>
+</ul>
+<h4 id="AutoLISP表达式"><a href="#AutoLISP表达式" class="headerlink" title="AutoLISP表达式"></a>AutoLISP表达式</h4><ul>
+<li>表达式的格式：</li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">function</span>  </div><div class="line">arguments</div><div class="line">)</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">(<span class="name">fun1</span> (<span class="name">fun2</span></div><div class="line">arguments) (<span class="name">fun3</span></div><div class="line">arguments)</div><div class="line">)</div></pre></td></tr></table></figure>
+<p>示例：</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">*</span> <span class="number">2</span> <span class="number">27</span>)</div><div class="line"></div><div class="line"><span class="number">54</span></div></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">*</span> <span class="number">2</span> (<span class="name">+</span> <span class="number">5</span> <span class="number">10</span>))</div><div class="line"></div><div class="line"><span class="number">30</span></div></pre></td></tr></table></figure>
+<h5 id="AutoLISP-函数语法"><a href="#AutoLISP-函数语法" class="headerlink" title="AutoLISP 函数语法"></a>AutoLISP 函数语法</h5><ul>
+<li>约定俗成的语法：</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">(<span class="name">foo</span> string [number ...])</div><div class="line"></div><div class="line">foo: 函数名</div><div class="line">string: 必要参数</div><div class="line">number: 可选参数</div></pre></td></tr></table></figure>
+<h4 id="AutoLISP-数据类型"><a href="#AutoLISP-数据类型" class="headerlink" title="AutoLISP 数据类型"></a>AutoLISP 数据类型</h4><ul>
+<li><p>Integers: 整数</p>
+<ul>
+<li>32位有符号数字：+2,147,483,647 ~ -2,147,483,648（note: <code>getint</code>函数只接受16位整数（+32767 ~ -32768））</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">2147483647</span></div><div class="line"></div><div class="line"><span class="number">2147483647</span></div></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">2147483648</span></div><div class="line"></div><div class="line"><span class="number">2.14748e+009</span></div></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">+</span> <span class="number">2147483646</span> <span class="number">3</span>)</div><div class="line"></div><div class="line"><span class="number">-2147483647</span></div></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">+</span> <span class="number">2147483648</span> <span class="number">2</span>)</div><div class="line"></div><div class="line"><span class="number">2.14748e+009</span></div></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">-2147483647</span></div><div class="line"></div><div class="line"><span class="number">-2147483647</span></div></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">-2147483648</span></div><div class="line"></div><div class="line"><span class="number">-2.14748e+009</span></div></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">-</span> <span class="number">-2147483648</span> <span class="number">1</span>)</div><div class="line"></div><div class="line"><span class="number">-2.14748e+009</span></div></pre></td></tr></table></figure>
+<ul>
+<li><p>Reals: 实数</p>
+<ul>
+<li>-1 ~ 1之间的实数必须包含前导0</li>
+<li>实数以双精度浮点数格式存储</li>
+<li>可用科学计数法表示</li>
+</ul>
+</li>
+<li><p>Strings: 字符串</p>
+</li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">"\nEnter first point:"</span></div></pre></td></tr></table></figure>
+<ul>
+<li>Lists: 列表</li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">(<span class="number">1.0</span> <span class="number">1.0</span> <span class="number">0.0</span>)</div><div class="line"></div><div class="line">(<span class="string">"this"</span> <span class="string">"that"</span> <span class="string">"the other"</span>)</div><div class="line"></div><div class="line">(<span class="number">1</span> <span class="string">"ONE"</span>)</div></pre></td></tr></table></figure>
+<ul>
+<li><p>Selection Sets: 选择集</p>
+<ul>
+<li><strong>选择集</strong>是包含一个或多个对象（或实体）的集合，你能够交互地向<strong>选择集</strong>中增加对象，或从<strong>选择集</strong>中删除对象</li>
+<li>下面的例子用<code>ssget</code>函数返回一个<code>drawing</code>中所有对象的选择集</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">ssget</span> <span class="string">"X"</span>)</div><div class="line"></div><div class="line">&lt;Selection set: 6&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>Entity Names: 实体名(<em>图元名</em>)</p>
+<ul>
+<li>一个<strong>实体名</strong>是指派给某个<code>drawing</code>对象的数字标签</li>
+<li>它实际上是某个AutoCAD文件中的指针，并且能被用来找到对象的数据库记录和它的向量</li>
+<li>该标签能够被<code>AutoLISP</code>函数引用以进行各种处理</li>
+<li>AutoCAD内部引用对象作为实体</li>
+<li>下面的例子使用<code>entlast</code>函数得到输入<code>drawing</code>中的最后一个对象</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">(<span class="name">entlast</span>)</div><div class="line"></div><div class="line">&lt;图元名: -16bbe0&gt;</div><div class="line"></div><div class="line">图元名指的是drawing中仅在当前编辑会话期间有效的对象</div></pre></td></tr></table></figure>
+<ul>
+<li><p>File Descriptors: 文件描述符</p>
+<ul>
+<li><em>文件描述符</em>是一个指向AutoLISP <code>open</code> 函数打开的文件的指针</li>
+<li><code>open</code> 函数以字母数字标签的形式返回该指针</li>
+<li>其他AutoLISP函数可以应用该指针读或写所指向的文件</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">(<span class="name">setq</span> file1(<span class="name">open</span> <span class="string">"test.dwg"</span> <span class="string">"r"</span>))</div><div class="line"></div><div class="line">#&lt;file <span class="string">"test.dwg"</span>&gt;</div><div class="line">------</div><div class="line">(<span class="name">close</span> file1)</div><div class="line"></div><div class="line"><span class="literal">nil</span></div></pre></td></tr></table></figure>
+<ul>
+<li><p>Symbols and Variables: 象征符号与变量</p>
+<ul>
+<li>AutoLISP使用象征符号指代数据</li>
+<li>象征符号名大小写<strong>不</strong>敏感，可以包含任意顺序的字母数字和符号（除了以下的<strong>限制符号</strong>）</li>
+<li>象征符号名不能仅包含数字字符</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Notation characters</th>
+<th>descriptions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(</td>
+<td>(Open Parenthesis)</td>
+</tr>
+<tr>
+<td>)</td>
+<td>(Close Parenthesis)</td>
+</tr>
+<tr>
+<td>.</td>
+<td>(Period)</td>
+</tr>
+<tr>
+<td>‘</td>
+<td>(Apostrophe)</td>
+</tr>
+<tr>
+<td>“</td>
+<td>(Quote Symbol)</td>
+</tr>
+<tr>
+<td>;</td>
+<td>(Semicolon)</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">setq</span> str1 <span class="string">"this is a string"</span>)</div><div class="line"></div><div class="line"><span class="string">"this is a string"</span></div></pre></td></tr></table></figure>
+<h4 id="AutoLISP-程序文件"><a href="#AutoLISP-程序文件" class="headerlink" title="AutoLISP 程序文件"></a>AutoLISP 程序文件</h4><ul>
+<li>AutoLISP 源代码文件的扩展名为 <code>.lsp</code></li>
+</ul>
+<h5 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h5><ul>
+<li>变量名、常量、函数名之间的多个空格被视作一个空格；行尾被视作一个空格</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">(<span class="name">setq</span> test1 <span class="number">123</span> test2 <span class="number">456</span>)</div><div class="line"></div><div class="line">(<span class="name">setq</span></div><div class="line">    test1 <span class="number">123</span></div><div class="line">	test2 <span class="number">456</span></div><div class="line">)</div><div class="line"></div><div class="line">两者结果相同</div></pre></td></tr></table></figure>
+<h5 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h5><ul>
+<li>注释符号为<strong>分号</strong> <code>;</code>, <code>;| ... |;</code>，注释可用来做以下事情：<ul>
+<li>给出题目、作者和创建日期</li>
+<li>提供使用说明</li>
+<li>做解释性的备注</li>
+<li>在调试过程中做备注</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">; This entire line is a comment</span></div><div class="line">(<span class="name">setq</span> area (<span class="name">*</span> pi r r)) <span class="comment">; Compute area of circle</span></div></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">; 行内注释</span></div><div class="line">(<span class="name">setq</span> tmode <span class="comment">;|some note here|; (getvar "tilemode"))</span></div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">; 多行注释</span></div><div class="line">(<span class="name">setvar</span> <span class="string">"orthomode"</span> <span class="number">1</span>) <span class="comment">;|comment starts here</span></div><div class="line">and continues to this line,</div><div class="line">but ends way down here|; (princ "\nORTHOMODE set On.")</div></pre></td></tr></table></figure>
+<h5 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h5><ul>
+<li><code>setq</code> 函数将值赋给变量</li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">setq</span></div><div class="line">	variable_name1 value1 [variable_name2 value2 ...]</div><div class="line">)</div></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">set</span> val <span class="number">3</span> abc <span class="number">3.875</span>)</div><div class="line"></div><div class="line"><span class="number">3.875</span></div></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">setq</span> layr <span class="string">"EXTERIOR-WALLS"</span>)</div><div class="line"></div><div class="line"><span class="string">"EXTERIOR-WALLS"</span></div></pre></td></tr></table></figure>
+<ul>
+<li>显示变量的值，用 <code>!</code></li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">!abc</div><div class="line"></div><div class="line"><span class="number">3.875</span></div></pre></td></tr></table></figure>
+<ul>
+<li><code>nil</code> 变量<ul>
+<li>没有被赋值的变量；不同于空（<code>blank</code>），也不同于<code>0</code>，前者是一个字符串，后者是一个数字</li>
+<li>设置一个变量为<code>Nil</code>将释放掉该变量值所占据的内存空间</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">setq</span> val <span class="literal">nil</span>)</div><div class="line"></div><div class="line"><span class="literal">nil</span></div></pre></td></tr></table></figure>
+<ul>
+<li>预定义变量<ul>
+<li><code>PAUSE</code>: 包含<code>\\</code>的一个字符串，该变量配合<code>command</code>函数来暂停用户输入</li>
+<li><code>PI</code>: 一个常量，近似等于<code>3.14159</code></li>
+<li><code>T</code>: 一个常量，被用作一个<code>non-nil</code>值</li>
+<li><strong>注意：这些预定义变量的值可以使用<code>setq</code>函数来修改，但不建议这样做</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="数字处理"><a href="#数字处理" class="headerlink" title="数字处理"></a>数字处理</h4><figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">*</span> <span class="number">2.5</span> <span class="number">13</span>)</div><div class="line"></div><div class="line"><span class="number">32.5</span></div></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">/</span> <span class="number">12</span> <span class="number">5</span>)</div><div class="line"></div><div class="line"><span class="number">2</span></div></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">/</span> <span class="number">12.0</span> <span class="number">5</span>)</div><div class="line"></div><div class="line"><span class="number">2.4</span></div></pre></td></tr></table></figure>
+<h4 id="字符串处理"><a href="#字符串处理" class="headerlink" title="字符串处理"></a>字符串处理</h4><ul>
+<li><code>strcase</code> 函数用来转换字母大小写，包含两个参数：一个字符串，一个可选参数</li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">strcase</span> <span class="string">"This is a TEST."</span>)</div><div class="line"></div><div class="line"><span class="string">"THIS IS A TEST."</span></div></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">strcase</span> <span class="string">"This is a TEST."</span> T)</div><div class="line"></div><div class="line"><span class="string">"this is a test."</span></div></pre></td></tr></table></figure>
+<ul>
+<li><code>strcat</code> 函数将多个字符串合并为一个字符串</li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">setq</span> str <span class="string">"BIG"</span>)(<span class="name">setq</span> bigstr (<span class="name">strcat</span> <span class="string">"This is a "</span> str <span class="string">" test."</span>))</div><div class="line"></div><div class="line"><span class="string">"This is a BIG test."</span></div></pre></td></tr></table></figure>
+<ul>
+<li><code>strlen</code> 函数返回字符串长度</li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">strlen</span> bigstr)</div><div class="line"></div><div class="line"><span class="number">19</span></div></pre></td></tr></table></figure>
+<ul>
+<li><p><code>substr</code> 函数返回一个字符串的子串，包含2个必要参数和一个可选参数：<em>字符串、第一个字母的位置(从1开)和字母的数量</em></p>
+<ul>
+<li>定义一个文件名，获取子串</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">setq</span> filnam <span class="string">"bigfile.txt"</span>)</div><div class="line"></div><div class="line"><span class="string">"bigfile.txt"</span></div></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">(<span class="name">setq</span> newlen (<span class="name">-</span> (<span class="name">strlen</span> filnam) <span class="number">4</span>))</div><div class="line"></div><div class="line"><span class="number">7</span></div><div class="line">------</div><div class="line">(<span class="name">substr</span> filnam <span class="number">1</span> newlen)</div><div class="line"></div><div class="line"><span class="string">"bigfile"</span></div><div class="line"></div><div class="line">或者，合并为一行代码：</div><div class="line"></div><div class="line">(<span class="name">substr</span> filnam <span class="number">1</span> (<span class="name">-</span> (<span class="name">strlen</span> filnam) <span class="number">4</span>))</div><div class="line"></div><div class="line"><span class="string">"bigfile"</span></div></pre></td></tr></table></figure>
+<h4 id="基本输出函数"><a href="#基本输出函数" class="headerlink" title="基本输出函数"></a>基本输出函数</h4><h5 id="文本输出"><a href="#文本输出" class="headerlink" title="文本输出"></a>文本输出</h5><ul>
+<li>主要的文本输出函数包括：</li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">prin1</div><div class="line">princ</div><div class="line">print</div><div class="line">prompt</div></pre></td></tr></table></figure>
+<ul>
+<li><code>princ</code>: 输出无引号封闭的字符串</li>
+<li><code>prinl</code>: 输出有引号封闭的字符串</li>
+<li><code>print</code>: 输出有引号封闭的字符串，但在表达式前放一个空行，其后放一个空格</li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">(<span class="name">setq</span> str <span class="string">"The \"allowable\" tolerance is 1\/4"</span>)</div><div class="line"></div><div class="line"><span class="string">"The \"allowable\" tolerance is 1/4"</span></div><div class="line"></div><div class="line">(<span class="name">prompt</span> str)</div><div class="line"></div><div class="line">The <span class="string">"allowable"</span> tolerance is <span class="number">1/4</span><span class="literal">nil</span></div><div class="line"></div><div class="line">(<span class="name">princ</span> str)</div><div class="line"></div><div class="line">The <span class="string">"allowable"</span> tolerance is <span class="number">1/4</span><span class="string">"The \"allowable\" tolerance is 1/4"</span></div><div class="line"></div><div class="line">(<span class="name">prin1</span> str)</div><div class="line"></div><div class="line"><span class="string">"The \"allowable\" tolerance is 1/4"</span><span class="string">"The \"allowable\" tolerance is 1/4"</span></div><div class="line"></div><div class="line">(<span class="name">print</span> str)</div><div class="line"></div><div class="line"><span class="string">"The \"allowable\" tolerance is 1/4"</span> <span class="string">"The \"allowable\" tolerance is 1/4"</span></div></pre></td></tr></table></figure>
+<ul>
+<li>安静退出：使用一个不带参数的 <code>princ</code> 函数</li>
+</ul>
+<h5 id="控制字符串中的字母"><a href="#控制字符串中的字母" class="headerlink" title="控制字符串中的字母"></a>控制字符串中的字母</h5><table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\</td>
+<td>\</td>
+</tr>
+<tr>
+<td>\”</td>
+<td>“</td>
+</tr>
+<tr>
+<td>\e</td>
+<td>Escape character</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>Newline character</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>Return character</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>Tab character</td>
+</tr>
+<tr>
+<td>\nnn</td>
+<td>八进制编码nnn的字符</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>prompt</code> 和 <code>princ</code> 扩展了这些控制字符</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">princ</span> <span class="string">"The \"filename\" is: /ACAD/TEST.TXT."</span>)</div><div class="line"></div><div class="line">The "filename" is: /ACAD/TEST.TXT."The \"filename\" is: /ACAD/TEST.TXT."</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">(<span class="name">prompt</span> <span class="string">"An example of the \nnewline character."</span>)</div><div class="line"></div><div class="line">An example of the</div><div class="line">newline character.nil</div></pre></td></tr></table></figure>
+<h5 id="通配符匹配"><a href="#通配符匹配" class="headerlink" title="通配符匹配"></a>通配符匹配</h5><ul>
+<li>通配符(wild-card)与其它语言的正则表达式(regular expressions)类似</li>
+<li><code>wcmatch</code> 函数能够用来进行字符串和通配符的比较</li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">(<span class="name">setq</span> matchme <span class="string">"this is a string - test1 test2 the end"</span>)</div><div class="line"></div><div class="line"><span class="string">"this is a string - test1 test2 the end"</span></div><div class="line"></div><div class="line">(<span class="name">wcmatch</span> matchme <span class="string">"this*"</span>)</div><div class="line"></div><div class="line">T</div><div class="line"></div><div class="line"><span class="comment">; 如果包含 "test4", "test5", "test6" or "test9"，将返回 T</span></div><div class="line">(<span class="name">wcmatch</span> matchme <span class="string">"*test[4-69]*"</span>)</div><div class="line"></div><div class="line"><span class="literal">nil</span></div><div class="line"></div><div class="line">(<span class="name">wcmatch</span> matchme <span class="string">"*test[4-61]*"</span>)</div><div class="line"></div><div class="line">T</div><div class="line"></div><div class="line">(<span class="name">wcmatch</span> matchme <span class="string">"ABC,XYZ*,*end"</span>)</div><div class="line"></div><div class="line">T</div></pre></td></tr></table></figure>
+<h4 id="等式和条件"><a href="#等式和条件" class="headerlink" title="等式和条件"></a>等式和条件</h4><ul>
+<li>AutoLISP 在某些情况下会自动将象征表名转化为大写，此时进行比较时可能需要用到 <code>strcase</code> 函数</li>
+</ul>
+<h4 id="列表处理"><a href="#列表处理" class="headerlink" title="列表处理"></a>列表处理</h4><ul>
+<li>列表中的项不需要数据类型相同</li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">setq</span> lst1 (<span class="name">list</span> <span class="number">1.0</span> <span class="string">"One"</span> <span class="number">1</span>))</div><div class="line"></div><div class="line">(<span class="number">1.0</span> <span class="string">"One"</span> <span class="number">1</span>)</div></pre></td></tr></table></figure>
+<ul>
+<li><code>nth</code> 函数检索列表中的某一项，包含两个参数：<em>起始序号(从0开始)，列表本身</em></li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">nth</span> <span class="number">1</span> lst1)</div><div class="line"></div><div class="line"><span class="string">"One"</span></div></pre></td></tr></table></figure>
+<ul>
+<li><code>cdr</code> 函数返回除第一个元素外的所有元素</li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">cdr</span> lst1)</div><div class="line"></div><div class="line">(<span class="string">"One"</span> <span class="number">1</span>)</div></pre></td></tr></table></figure>
+<ul>
+<li><code>append</code> 函数向列表尾增加一个新项，并返回一个新列表；并且其所有参数必须是列表</li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">; 注意：quote函数（or '）很容易将一个字符串添加进一个列表</span></div><div class="line">(<span class="name">setq</span> lst2 (<span class="name">append</span> lst1 '(<span class="string">"One"</span>)))</div><div class="line"></div><div class="line">(<span class="number">1.0</span> <span class="string">"One"</span> <span class="number">1</span> <span class="string">"One"</span>)</div></pre></td></tr></table></figure>
+<ul>
+<li><code>cons</code>函数向列表头增加一个新项，并返回一个新列表</li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">setq</span> lst3 (<span class="name">cons</span> <span class="string">"Ones"</span> lst2))</div><div class="line"></div><div class="line">(<span class="string">"Ones"</span> <span class="number">1.0</span> <span class="string">"One"</span> <span class="number">1</span> <span class="string">"One"</span>)</div></pre></td></tr></table></figure>
+<ul>
+<li><code>subst</code>函数用新项替换掉原列表中所有出现的老项，并返回一个新列表</li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">setq</span> lst4 (<span class="name">subst</span> <span class="string">"one"</span> <span class="string">"One"</span> lst3))</div><div class="line"></div><div class="line">(<span class="string">"Ones"</span> <span class="number">1.0</span> <span class="string">"one"</span> <span class="number">1</span> <span class="string">"one"</span>)</div></pre></td></tr></table></figure>
+<h5 id="点列表"><a href="#点列表" class="headerlink" title="点列表"></a>点列表</h5><figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">(<span class="name">list</span> <span class="number">3.875</span> <span class="number">1.23</span>)</div><div class="line"></div><div class="line">(<span class="number">3.875</span> <span class="number">1.23</span>)</div><div class="line"></div><div class="line">(<span class="name">list</span> <span class="number">88.0</span> <span class="number">14.77</span> <span class="number">3.14</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">(<span class="name">setq</span> pt1 (<span class="name">list</span> <span class="number">3.875</span> <span class="number">1.23</span>))</div><div class="line"></div><div class="line">(<span class="number">3.875</span> <span class="number">1.23</span>)</div><div class="line"></div><div class="line">(<span class="name">setq</span> pt2 (<span class="name">list</span> <span class="number">88.0</span> <span class="number">14.77</span> <span class="number">3.14</span>))</div><div class="line"></div><div class="line">(<span class="number">88.0</span> <span class="number">14.77</span> <span class="number">3.14</span>)</div><div class="line"></div><div class="line">(<span class="name">setq</span> abc <span class="number">3.45</span>)</div><div class="line"></div><div class="line"><span class="number">3.45</span></div><div class="line"></div><div class="line">(<span class="name">setq</span> pt3 (<span class="name">list</span> abc <span class="number">1.23</span>))</div><div class="line"></div><div class="line">(<span class="number">3.45</span> <span class="number">1.23</span>)</div></pre></td></tr></table></figure>
+<ul>
+<li>当列表的所有项均为常数时，可使用 <code>quote</code> 函数</li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">(<span class="name">setq</span> pt1 (<span class="name">quote</span> (<span class="number">4.5</span> <span class="number">7.5</span>)))</div><div class="line"></div><div class="line">(<span class="number">4.5</span> <span class="number">7.5</span>)</div><div class="line"></div><div class="line"><span class="comment">; 功能同上</span></div><div class="line">(<span class="name">setq</span> pt1 '(<span class="number">4.5</span> <span class="number">7.5</span>))</div><div class="line"></div><div class="line">(<span class="number">4.5</span> <span class="number">7.5</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">setq</span> pt '(<span class="number">1.5</span> <span class="number">3.2</span> <span class="number">2.0</span>))</div><div class="line"></div><div class="line">(<span class="number">1.5</span> <span class="number">3.2</span> <span class="number">2.0</span>)</div></pre></td></tr></table></figure>
+<ul>
+<li><code>car</code> 函数返回列表的第一项</li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">setq</span> x_val (<span class="name">car</span> pt))</div><div class="line"></div><div class="line"><span class="number">1.5</span></div></pre></td></tr></table></figure>
+<ul>
+<li><code>cadr</code> 函数返回列表的第二项</li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">setq</span> y_val (<span class="name">cadr</span> pt))</div><div class="line"></div><div class="line"><span class="number">3.2</span></div></pre></td></tr></table></figure>
+<ul>
+<li><code>caddr</code> 函数返回列表的第三项</li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">setq</span> z_val (<span class="name">caddr</span> pt))</div><div class="line"></div><div class="line"><span class="number">2.0</span></div></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">; 定义矩形的左下角和右上角坐标</span></div><div class="line">(<span class="name">setq</span> pt1 '(<span class="number">1.0</span> <span class="number">2.0</span>) pt2 '(<span class="number">3.0</span> <span class="number">4.0</span>))</div><div class="line"></div><div class="line">(<span class="number">3.0</span> <span class="number">4.0</span>)</div><div class="line"></div><div class="line"><span class="comment">; 定义坐标的左上角坐标</span></div><div class="line">(<span class="name">setq</span> pt3 (<span class="name">list</span> (<span class="name">car</span> pt1) (<span class="name">cadr</span> pt2)))</div><div class="line"></div><div class="line">(<span class="number">1.0</span> <span class="number">4.0</span>)</div></pre></td></tr></table></figure>
+<ul>
+<li>AutoLISP 支持 <code>car</code> 和 <code>cdr</code> 最深<code>4</code>层的串联</li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">(<span class="name">caar</span> x)	<span class="comment">; 等同于 (car (car x))</span></div><div class="line"></div><div class="line">(<span class="name">cdar</span> x)	<span class="comment">; 等同于 (cdr (car x))</span></div><div class="line"></div><div class="line">(<span class="name">cadar</span> x)	<span class="comment">; 等同于 (car (cdr (car x)))</span></div></pre></td></tr></table></figure>
+<h5 id="点对-dotted-pairs"><a href="#点对-dotted-pairs" class="headerlink" title="点对(dotted pairs)"></a>点对(dotted pairs)</h5><ul>
+<li>点对列表必须总是包含2项</li>
+<li>大多数列表处理函数不接受点对作为一个参数</li>
+<li><code>car, cdr, assoc</code> 函数可以处理点对</li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">setq</span> sublist (<span class="name">cons</span> 'lyr <span class="string">"WALLS"</span>))</div><div class="line"></div><div class="line">(<span class="name">LYR</span> . <span class="string">"WALLS"</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">setq</span> wallinfo (<span class="name">list</span> sublist (<span class="name">cons</span> 'len <span class="number">240.0</span>) (<span class="name">cons</span> 'hgt <span class="number">96.0</span>)))</div><div class="line"></div><div class="line">((<span class="name">LYR</span> . <span class="string">"WALLS"</span>) (<span class="name">LEN</span> . <span class="number">240.0</span>) (<span class="name">HGT</span> . <span class="number">96.0</span>))</div></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">(<span class="name">assoc</span> 'len wallinfo)</div><div class="line"></div><div class="line">(<span class="name">LEN</span> . <span class="number">240.0</span>)</div><div class="line"></div><div class="line">(<span class="name">cdr</span> (<span class="name">assoc</span> 'lyr wallinfo))</div><div class="line"></div><div class="line"><span class="string">"WALLS"</span></div><div class="line"></div><div class="line">(<span class="name">nth</span> <span class="number">1</span> wallinfo)</div><div class="line"></div><div class="line">(<span class="name">LEN</span> . <span class="number">240.0</span>)</div><div class="line"></div><div class="line">(<span class="name">car</span> (<span class="name">nth</span> <span class="number">1</span> wallinfo))</div><div class="line"></div><div class="line">LEN</div></pre></td></tr></table></figure>
+<h4 id="符号和函数处理"><a href="#符号和函数处理" class="headerlink" title="符号和函数处理"></a>符号和函数处理</h4><h5 id="用-defun-定义一个函数"><a href="#用-defun-定义一个函数" class="headerlink" title="用 defun 定义一个函数"></a>用 <code>defun</code> 定义一个函数</h5><ul>
+<li><code>defun</code> 函数要求至少三个参数：函数名、参数列表和表达式</li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(<span class="name">defun</span> symbol_name (<span class="name">args</span> / local_variables) expressions)</div></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">defun</span> DONE () (<span class="name">prompt</span> <span class="string">"\nbye!"</span>))</div><div class="line"></div><div class="line">DONE</div></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">(<span class="name">prompt</span> <span class="string">"The value is 127."</span>)(<span class="name">DONE</span>)</div><div class="line"></div><div class="line">The value is 127.</div><div class="line">bye!nil</div><div class="line">------</div><div class="line">(<span class="name">prompt</span> <span class="string">"The value is 127."</span>)(<span class="name">DONE</span>)(<span class="name">princ</span>)</div><div class="line"></div><div class="line">The value is 127.</div><div class="line">bye!</div></pre></td></tr></table></figure>
+<h5 id="C-XXX-函数"><a href="#C-XXX-函数" class="headerlink" title="C:XXX 函数"></a><code>C:XXX</code> 函数</h5><ul>
+<li>可以用此函数定义新的命令或重定义已有的命令</li>
+<li>必须服从以下规则：<ul>
+<li>函数名必须为<code>C:XXX</code> 或 <code>C:xxx</code>形式：<code>C:</code> 部分必须存在；<code>XXX</code> 为你定义的命令名</li>
+<li>不能带参数(除了 <code>local variables</code>)</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">defun</span> C<span class="symbol">:HELLO</span> () (<span class="name">princ</span> <span class="string">"Hello world. \n"</span>)(<span class="name">princ</span>))</div><div class="line"></div><div class="line">C:HELLO</div></pre></td></tr></table></figure>
+<ul>
+<li>重定义AutoCAD命令</li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">(<span class="name">defun</span> C<span class="symbol">:LINE</span> () (<span class="name">princ</span> <span class="string">"Shouldn't you be using PLINE?\n"</span>) (<span class="name">command</span> <span class="string">".LINE"</span>)(<span class="name">princ</span>))</div><div class="line"></div><div class="line">C:LINE</div><div class="line"></div><div class="line">(<span class="name">command</span> <span class="string">"undefine"</span> <span class="string">"line"</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">; 禁止输出重复信息</span></div><div class="line">(<span class="name">defun</span> C<span class="symbol">:LINE</span> (<span class="name">/</span> cmdsave) (<span class="name">setq</span> cmdsave (<span class="name">getvar</span> <span class="string">"cmdecho"</span>)) (<span class="name">setvar</span> <span class="string">"cmdecho"</span> <span class="number">0</span>) (<span class="name">princ</span> <span class="string">"Shouldn't you be using PLINE?\n"</span>) (<span class="name">command</span> <span class="string">".LINE"</span>) (<span class="name">setvar</span> <span class="string">"cmdecho"</span> cmdsave) (<span class="name">princ</span>))</div><div class="line"></div><div class="line">C:LINE</div></pre></td></tr></table></figure>
+<ul>
+<li>重定义命令后，要使用原内置命令，可以使用<code>.</code>前缀命令，如<code>.line</code></li>
+</ul>
+<h5 id="函数中的局部变量-local-variables"><a href="#函数中的局部变量-local-variables" class="headerlink" title="函数中的局部变量 local variables"></a>函数中的局部变量 <code>local variables</code></h5><ul>
+<li>声明全局变量：<code>*default-layer*</code></li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">; 定义带局部变量的函数</span></div><div class="line">(<span class="name">defun</span> LOCAL (<span class="name">/</span> aaa bbb)</div><div class="line">(<span class="name">setq</span> aaa <span class="string">"A"</span> bbb <span class="string">"B"</span>)</div><div class="line">(<span class="name">princ</span> (<span class="name">strcat</span> <span class="string">"\naaa has the value "</span> aaa))</div><div class="line">(<span class="name">princ</span> (<span class="name">strcat</span> <span class="string">"\nbbb has the value "</span> bbb))</div><div class="line">(<span class="name">princ</span>))</div><div class="line"></div><div class="line">LOCAL</div></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">setq</span> aaa <span class="number">1</span> bbb <span class="number">2</span>)</div><div class="line"></div><div class="line"><span class="number">2</span></div></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">(<span class="name">local</span>)</div><div class="line"></div><div class="line">aaa has the value A</div><div class="line">bbb has the value B</div></pre></td></tr></table></figure>
+<h5 id="带参函数"><a href="#带参函数" class="headerlink" title="带参函数"></a>带参函数</h5><ul>
+<li>用户自定义函数不能包含<em>可选参数</em></li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">; 注意：这里不能使用 princ 函数抑制程序返回值</span></div><div class="line">(<span class="name">defun</span> ARGTEST (<span class="name">arg1</span> arg2 / ccc)</div><div class="line">(<span class="name">setq</span> ccc <span class="string">"Constant string"</span>)</div><div class="line">(<span class="name">strcat</span> ccc <span class="string">", "</span> arg1 <span class="string">", "</span> arg2))</div><div class="line"></div><div class="line">ARGTEST</div></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">(<span class="name">setq</span> newstr (<span class="name">ARGTEST</span> <span class="string">"String 1"</span> <span class="string">"String 2"</span>))</div><div class="line"></div><div class="line"><span class="string">"Constant string, String 1, String 2"</span></div><div class="line"></div><div class="line"><span class="comment">; 程序执行完成，局部变量`ccc`所占用的内存空间就被释放了</span></div><div class="line">!ccc</div><div class="line"></div><div class="line"><span class="literal">nil</span></div></pre></td></tr></table></figure>
+<ul>
+<li>特殊形式</li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">and</div><div class="line">command</div><div class="line">cond</div><div class="line">defun</div><div class="line">defun-q</div><div class="line">foreach</div><div class="line">function</div><div class="line">if</div><div class="line">lambda</div><div class="line">or</div><div class="line">progn</div><div class="line">quote</div><div class="line">repeat</div><div class="line">setq</div><div class="line">trace</div><div class="line">untrace</div><div class="line">vlax-for</div><div class="line">while</div></pre></td></tr></table></figure>
+<h3 id="AutoLISP-中的错误处理"><a href="#AutoLISP-中的错误处理" class="headerlink" title="AutoLISP 中的错误处理"></a>AutoLISP 中的错误处理</h3><p><code>*error*</code> 函数<br><code>vl-catch-all-apply</code> 函数</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name">alert</span> <span class="string">"File not found"</span>)</div><div class="line"></div><div class="line"><span class="comment">; 将弹出一个警告框</span></div></pre></td></tr></table></figure>
+<h2 id="使用AutoLISP与AutoCAD进行交流"><a href="#使用AutoLISP与AutoCAD进行交流" class="headerlink" title="使用AutoLISP与AutoCAD进行交流"></a>使用AutoLISP与AutoCAD进行交流</h2><h3 id="访问命令与服务"><a href="#访问命令与服务" class="headerlink" title="访问命令与服务"></a>访问命令与服务</h3><h4 id="命令提交"><a href="#命令提交" class="headerlink" title="命令提交"></a>命令提交</h4><figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">(<span class="name">command</span> <span class="string">"circle"</span> <span class="string">"0,0"</span> <span class="string">"3,3"</span>)</div><div class="line">(<span class="name">command</span> <span class="string">"thickness"</span> <span class="number">1</span>)</div><div class="line">(<span class="name">setq</span> p1 '(<span class="number">1.0</span> <span class="number">1.0</span> <span class="number">3.0</span>))</div><div class="line">(<span class="name">setq</span> rad <span class="number">4.5</span>)</div><div class="line">(<span class="name">command</span> <span class="string">"circle"</span> p1 rad)</div></pre></td></tr></table></figure>
+<ul>
+<li><p>外国语支持</p>
+</li>
+<li><p>暂停用户输入</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/autolisp/" rel="tag"># autolisp</a>
+          
+            <a href="/tags/autocad/" rel="tag"># autocad</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/latex-install-manual/" rel="prev" title="Windows 7 x86/x64 安装LaTeX教程">
+                Windows 7 x86/x64 安装LaTeX教程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMTY5OS84MjYz"></div>
+    </div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Yinkit Lee</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-引言"><span class="nav-number">1.</span> <span class="nav-text">1 引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用AutoLISP语言"><span class="nav-number">2.</span> <span class="nav-text">使用AutoLISP语言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AutoLISP基础"><span class="nav-number">2.1.</span> <span class="nav-text">AutoLISP基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#AutoLISP表达式"><span class="nav-number">2.1.1.</span> <span class="nav-text">AutoLISP表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#AutoLISP-函数语法"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">AutoLISP 函数语法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AutoLISP-数据类型"><span class="nav-number">2.1.2.</span> <span class="nav-text">AutoLISP 数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AutoLISP-程序文件"><span class="nav-number">2.1.3.</span> <span class="nav-text">AutoLISP 程序文件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#空格"><span class="nav-number">2.1.3.1.</span> <span class="nav-text">空格</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#注释"><span class="nav-number">2.1.3.2.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#变量"><span class="nav-number">2.1.3.3.</span> <span class="nav-text">变量</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数字处理"><span class="nav-number">2.1.4.</span> <span class="nav-text">数字处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串处理"><span class="nav-number">2.1.5.</span> <span class="nav-text">字符串处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基本输出函数"><span class="nav-number">2.1.6.</span> <span class="nav-text">基本输出函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#文本输出"><span class="nav-number">2.1.6.1.</span> <span class="nav-text">文本输出</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#控制字符串中的字母"><span class="nav-number">2.1.6.2.</span> <span class="nav-text">控制字符串中的字母</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#通配符匹配"><span class="nav-number">2.1.6.3.</span> <span class="nav-text">通配符匹配</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#等式和条件"><span class="nav-number">2.1.7.</span> <span class="nav-text">等式和条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#列表处理"><span class="nav-number">2.1.8.</span> <span class="nav-text">列表处理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#点列表"><span class="nav-number">2.1.8.1.</span> <span class="nav-text">点列表</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#点对-dotted-pairs"><span class="nav-number">2.1.8.2.</span> <span class="nav-text">点对(dotted pairs)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#符号和函数处理"><span class="nav-number">2.1.9.</span> <span class="nav-text">符号和函数处理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#用-defun-定义一个函数"><span class="nav-number">2.1.9.1.</span> <span class="nav-text">用 defun 定义一个函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#C-XXX-函数"><span class="nav-number">2.1.9.2.</span> <span class="nav-text">C:XXX 函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#函数中的局部变量-local-variables"><span class="nav-number">2.1.9.3.</span> <span class="nav-text">函数中的局部变量 local variables</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#带参函数"><span class="nav-number">2.1.9.4.</span> <span class="nav-text">带参函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AutoLISP-中的错误处理"><span class="nav-number">2.2.</span> <span class="nav-text">AutoLISP 中的错误处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用AutoLISP与AutoCAD进行交流"><span class="nav-number">3.</span> <span class="nav-text">使用AutoLISP与AutoCAD进行交流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#访问命令与服务"><span class="nav-number">3.1.</span> <span class="nav-text">访问命令与服务</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#命令提交"><span class="nav-number">3.1.1.</span> <span class="nav-text">命令提交</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">Copyright &copy; 2016 &mdash; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yinkit Lee</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 訪客數
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 訪問量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("zLSdflMuUY1ECQoMfs2yesmi-gzGzoHsz", "vHXMGspVWONNGTitY8143H6v");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

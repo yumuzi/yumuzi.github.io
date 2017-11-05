@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.gif?v=5.1.3">
+
+
+
+
+
+
+  <meta name="keywords" content="MachineLearning,R," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Yinkit Lee" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="参考文档 【R语言进行数据挖掘】决策树和随机森林  使用包party 学习使用包party里的函数ctree()为数据集iris建立一个决策树； 四个属性：(1) 属性Sepal.Length：萼片长度(2) 属性Sepal.Width：萼片宽度(3) 属性Petal.Length：花瓣长度(4) 属性Petal.Width：花瓣宽度 上述四个属性被用来预测鸢(yuan1)尾花的Species（种">
+<meta name="keywords" content="MachineLearning,R">
+<meta property="og:type" content="article">
+<meta property="og:title" content="决策树与R语言">
+<meta property="og:url" content="https://yumuzi.github.io/decisionTreeR/index.html">
+<meta property="og:site_name" content="Yinkit Lee">
+<meta property="og:description" content="参考文档 【R语言进行数据挖掘】决策树和随机森林  使用包party 学习使用包party里的函数ctree()为数据集iris建立一个决策树； 四个属性：(1) 属性Sepal.Length：萼片长度(2) 属性Sepal.Width：萼片宽度(3) 属性Petal.Length：花瓣长度(4) 属性Petal.Width：花瓣宽度 上述四个属性被用来预测鸢(yuan1)尾花的Species（种">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://github.com/yumuzi/images/raw/master/20161212_iris_dtc1.png">
+<meta property="og:image" content="https://github.com/yumuzi/images/raw/master/20161212_iris_dtc2.png">
+<meta property="og:image" content="https://github.com/yumuzi/images/raw/master/20161212_bodyfat_dtc1.png">
+<meta property="og:image" content="https://github.com/yumuzi/images/raw/master/20161212_bodyfat_dtc2.png">
+<meta property="og:image" content="https://github.com/yumuzi/images/raw/master/20161212_bodyfat_dtc3.png">
+<meta property="og:image" content="https://github.com/yumuzi/images/raw/master/20161212_randomForest.png">
+<meta property="og:updated_time" content="2016-12-13T05:34:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="决策树与R语言">
+<meta name="twitter:description" content="参考文档 【R语言进行数据挖掘】决策树和随机森林  使用包party 学习使用包party里的函数ctree()为数据集iris建立一个决策树； 四个属性：(1) 属性Sepal.Length：萼片长度(2) 属性Sepal.Width：萼片宽度(3) 属性Petal.Length：花瓣长度(4) 属性Petal.Width：花瓣宽度 上述四个属性被用来预测鸢(yuan1)尾花的Species（种">
+<meta name="twitter:image" content="https://github.com/yumuzi/images/raw/master/20161212_iris_dtc1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://yumuzi.github.io/decisionTreeR/"/>
+
+
+
+
+
+  <title>决策树与R语言 | Yinkit Lee</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Yinkit Lee</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yumuzi.github.io/decisionTreeR/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yinkit Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yinkit Lee">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">决策树与R语言</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-12T23:20:05+08:00">
+                2016-12-12
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2016-12-13T13:34:09+08:00">
+                2016-12-13
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/decisionTreeR/" class="leancloud_visitors" data-flag-title="决策树与R语言">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,711
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h1><ul>
+<li><a href="http://www.cnblogs.com/jpld/p/4868761.html" target="_blank" rel="external">【R语言进行数据挖掘】决策树和随机森林</a></li>
+</ul>
+<h1 id="使用包party"><a href="#使用包party" class="headerlink" title="使用包party"></a>使用包<code>party</code></h1><ul>
+<li>学习使用包<code>party</code>里的函数<code>ctree()</code>为数据集iris建立一个决策树；</li>
+<li>四个属性：<br>(1) 属性<code>Sepal.Length</code>：萼片长度<br>(2) 属性<code>Sepal.Width</code>：萼片宽度<br>(3) 属性<code>Petal.Length</code>：花瓣长度<br>(4) 属性<code>Petal.Width</code>：花瓣宽度</li>
+<li>上述四个属性被用来预测鸢(yuan1)尾花的<code>Species</code>（种类）；</li>
+<li>在这个包里，函数<code>ctree()</code>建立了一个决策树，函数<code>predict()</code>预测了另外一个数据集；</li>
+<li>在建立模型之前，iris（鸢尾花）数据集被分成两个子集：训练集（70%）和测试集（30%）。使用随机种子设置固定的随机数，可以使得随机选取的数据是可重复利用的；</li>
+</ul>
+<hr>
+<a id="more"></a>
+<ul>
+<li>观察数据集的结构</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt; str(iris)</div><div class="line"></div><div class="line"><span class="string">'data.frame'</span>:    <span class="number">150</span> obs. of  <span class="number">5</span> variables:</div><div class="line"> $ Sepal.Length: num  <span class="number">5.1</span> <span class="number">4.9</span> <span class="number">4.7</span> <span class="number">4.6</span> <span class="number">5</span> <span class="number">5.4</span> <span class="number">4.6</span> <span class="number">5</span> <span class="number">4.4</span> <span class="number">4.9</span> <span class="keyword">...</span></div><div class="line"> $ Sepal.Width : num  <span class="number">3.5</span> <span class="number">3</span> <span class="number">3.2</span> <span class="number">3.1</span> <span class="number">3.6</span> <span class="number">3.9</span> <span class="number">3.4</span> <span class="number">3.4</span> <span class="number">2.9</span> <span class="number">3.1</span> <span class="keyword">...</span></div><div class="line"> $ Petal.Length: num  <span class="number">1.4</span> <span class="number">1.4</span> <span class="number">1.3</span> <span class="number">1.5</span> <span class="number">1.4</span> <span class="number">1.7</span> <span class="number">1.4</span> <span class="number">1.5</span> <span class="number">1.4</span> <span class="number">1.5</span> <span class="keyword">...</span></div><div class="line"> $ Petal.Width : num  <span class="number">0.2</span> <span class="number">0.2</span> <span class="number">0.2</span> <span class="number">0.2</span> <span class="number">0.2</span> <span class="number">0.4</span> <span class="number">0.3</span> <span class="number">0.2</span> <span class="number">0.2</span> <span class="number">0.1</span> <span class="keyword">...</span></div><div class="line"> $ Species     : Factor w/ <span class="number">3</span> levels <span class="string">"setosa"</span>,<span class="string">"versicolor"</span>,..: <span class="number">1</span> <span class="number">1</span> <span class="number">1</span> <span class="number">1</span> <span class="number">1</span> <span class="number">1</span> <span class="number">1</span> <span class="number">1</span> <span class="number">1</span> <span class="number">1</span> <span class="keyword">...</span></div></pre></td></tr></table></figure>
+<ul>
+<li>设置随机数起点</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; set.seed(<span class="number">1234</span>)</div></pre></td></tr></table></figure>
+<ul>
+<li>使用<code>sample()</code>函数抽取样本</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; ind &lt;- sample(<span class="number">2</span>,nrow(iris),replace=<span class="literal">TRUE</span>,prob = c(<span class="number">0.7</span>,<span class="number">0.3</span>))</div></pre></td></tr></table></figure>
+<ul>
+<li>训练集 &amp; 测试集</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; trainData &lt;- iris[ind == <span class="number">1</span>,]</div><div class="line">&gt; testData &lt;- iris[ind == <span class="number">2</span>,]</div></pre></td></tr></table></figure>
+<ul>
+<li>（安装并）加载包</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&gt; install.packages(<span class="string">"party"</span>)  <span class="comment"># 可能需要执行两遍</span></div><div class="line"></div><div class="line">&gt; <span class="keyword">library</span>(grid)</div><div class="line">&gt; <span class="keyword">library</span>(mvtnorm)</div><div class="line">&gt; <span class="keyword">library</span>(stats4)</div><div class="line">&gt; <span class="keyword">library</span>(modeltools)</div><div class="line">&gt; <span class="keyword">library</span>(zoo)</div><div class="line">&gt; <span class="keyword">library</span>(strucchange)</div><div class="line">&gt; <span class="keyword">library</span>(sandwich)</div><div class="line">&gt; <span class="keyword">library</span>(party)</div></pre></td></tr></table></figure>
+<ul>
+<li>设置决策树的目标变量和独立变量</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 符号‘~’是连接方程或公式左右两边的符号</span></div><div class="line">&gt; myFormula &lt;- Species ~ Sepal.Length + Sepal.Width + Petal.Length + Petal.Width</div></pre></td></tr></table></figure>
+<ul>
+<li>建立决策树</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; iris_ctree &lt;- ctree(myFormula, data=trainData)</div></pre></td></tr></table></figure>
+<ul>
+<li>查看训练结果</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt; table(predict(iris_ctree),trainData$Species)</div><div class="line"></div><div class="line">             setosa versicolor virginica</div><div class="line">  setosa         <span class="number">40</span>          <span class="number">0</span>         <span class="number">0</span></div><div class="line">  versicolor      <span class="number">0</span>         <span class="number">37</span>         <span class="number">3</span></div><div class="line">  virginica       <span class="number">0</span>          <span class="number">1</span>        <span class="number">31</span></div></pre></td></tr></table></figure>
+<ul>
+<li>打印决策树</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&gt; print(iris_ctree)</div><div class="line"></div><div class="line">     Conditional inference tree with <span class="number">4</span> terminal nodes</div><div class="line"></div><div class="line">Response:  Species </div><div class="line">Inputs:  Sepal.Length, Sepal.Width, Petal.Length, Petal.Width </div><div class="line">Number of observations:  <span class="number">112</span> </div><div class="line"></div><div class="line"><span class="number">1</span>) Petal.Length &lt;= <span class="number">1.9</span>; criterion = <span class="number">1</span>, statistic = <span class="number">104.643</span></div><div class="line">  <span class="number">2</span>)*  weights = <span class="number">40</span> </div><div class="line"><span class="number">1</span>) Petal.Length &gt; <span class="number">1.9</span></div><div class="line">  <span class="number">3</span>) Petal.Width &lt;= <span class="number">1.7</span>; criterion = <span class="number">1</span>, statistic = <span class="number">48.939</span></div><div class="line">    <span class="number">4</span>) Petal.Length &lt;= <span class="number">4.4</span>; criterion = <span class="number">0.974</span>, statistic = <span class="number">7.397</span></div><div class="line">      <span class="number">5</span>)*  weights = <span class="number">21</span> </div><div class="line">    <span class="number">4</span>) Petal.Length &gt; <span class="number">4.4</span></div><div class="line">      <span class="number">6</span>)*  weights = <span class="number">19</span> </div><div class="line">  <span class="number">3</span>) Petal.Width &gt; <span class="number">1.7</span></div><div class="line">    <span class="number">7</span>)*  weights = <span class="number">32</span></div></pre></td></tr></table></figure>
+<ul>
+<li>绘图</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;</span><span class="bash"> plot(iris_ctree)</span></div><div class="line"><span class="meta">&gt;</span><span class="bash"> plot(iris_ctree,<span class="built_in">type</span>=<span class="string">"simple"</span>)</span></div></pre></td></tr></table></figure>
+<p><img src="https://github.com/yumuzi/images/raw/master/20161212_iris_dtc1.png" alt=""></p>
+<p><img src="https://github.com/yumuzi/images/raw/master/20161212_iris_dtc2.png" alt=""></p>
+<ul>
+<li>在测试集上测试决策树模型</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&gt; testPred &lt;- predict(iris_ctree, newdata = testData)</div><div class="line">&gt; table(testPred, testData$Species)</div><div class="line"></div><div class="line">testPred     setosa versicolor virginica</div><div class="line">  setosa         <span class="number">10</span>          <span class="number">0</span>         <span class="number">0</span></div><div class="line">  versicolor      <span class="number">0</span>         <span class="number">12</span>         <span class="number">2</span></div><div class="line">  virginica       <span class="number">0</span>          <span class="number">0</span>        <span class="number">14</span></div></pre></td></tr></table></figure>
+<ul>
+<li>代码汇总</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">str(iris)</div><div class="line">set.seed(<span class="number">1234</span>)</div><div class="line"></div><div class="line">ind &lt;- sample(<span class="number">2</span>,nrow(iris),replace=<span class="literal">TRUE</span>,prob = c(<span class="number">0.7</span>,<span class="number">0.3</span>))</div><div class="line">trainData &lt;- iris[ind == <span class="number">1</span>,]</div><div class="line">testData &lt;- iris[ind == <span class="number">2</span>,]</div><div class="line"></div><div class="line"><span class="keyword">library</span>(grid)</div><div class="line"><span class="keyword">library</span>(mvtnorm)</div><div class="line"><span class="keyword">library</span>(stats4)</div><div class="line"><span class="keyword">library</span>(modeltools)</div><div class="line"><span class="keyword">library</span>(zoo)</div><div class="line"><span class="keyword">library</span>(strucchange)</div><div class="line"><span class="keyword">library</span>(sandwich)</div><div class="line"><span class="keyword">library</span>(party)</div><div class="line"></div><div class="line">myFormula &lt;- Species ~ Sepal.Length + Sepal.Width + Petal.Length + Petal.Width</div><div class="line">iris_ctree &lt;- ctree(myFormula, data=trainData)</div><div class="line"></div><div class="line">table(predict(iris_ctree),trainData$Species)</div><div class="line"></div><div class="line">print(iris_ctree)</div><div class="line">plot(iris_ctree)</div><div class="line">plot(iris_ctree,type=<span class="string">"simple"</span>)</div><div class="line"></div><div class="line">testPred &lt;- predict(iris_ctree, newdata = testData)</div><div class="line">table(testPred, testData$Species)</div></pre></td></tr></table></figure>
+<h1 id="使用包rpart"><a href="#使用包rpart" class="headerlink" title="使用包rpart"></a>使用包<code>rpart</code></h1><ul>
+<li>在<code>bodyfat</code>这个数据集基础上建立决策树；</li>
+<li>函数<code>rpart()</code>可以建立一个决策树，并且可以选择最小误差的预测；</li>
+<li>利用该决策树使用<code>predict()</code>函数预测另外一个数据集；</li>
+</ul>
+<hr>
+<ul>
+<li>加载<code>bodyfat</code>数据集，并查看它的一些属性</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt; data(<span class="string">"bodyfat"</span>, package = <span class="string">"TH.data"</span>)</div><div class="line">&gt; dim(bodyfat)  <span class="comment"># 维度 a x b</span></div><div class="line"></div><div class="line">[<span class="number">1</span>] <span class="number">71</span> <span class="number">10</span></div></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&gt; attributes(bodyfat)</div><div class="line"></div><div class="line">$names</div><div class="line"> [<span class="number">1</span>] <span class="string">"age"</span>          <span class="string">"DEXfat"</span>       <span class="string">"waistcirc"</span>   </div><div class="line"> [<span class="number">4</span>] <span class="string">"hipcirc"</span>      <span class="string">"elbowbreadth"</span> <span class="string">"kneebreadth"</span> </div><div class="line"> [<span class="number">7</span>] <span class="string">"anthro3a"</span>     <span class="string">"anthro3b"</span>     <span class="string">"anthro3c"</span>    </div><div class="line">[<span class="number">10</span>] <span class="string">"anthro4"</span>     </div><div class="line"></div><div class="line">$row.names</div><div class="line"> [<span class="number">1</span>] <span class="string">"47"</span>  <span class="string">"48"</span>  <span class="string">"49"</span>  <span class="string">"50"</span>  <span class="string">"51"</span>  <span class="string">"52"</span>  <span class="string">"53"</span>  <span class="string">"54"</span>  <span class="string">"55"</span> </div><div class="line">[<span class="number">10</span>] <span class="string">"56"</span>  <span class="string">"57"</span>  <span class="string">"58"</span>  <span class="string">"59"</span>  <span class="string">"60"</span>  <span class="string">"61"</span>  <span class="string">"62"</span>  <span class="string">"63"</span>  <span class="string">"64"</span> </div><div class="line">[<span class="number">19</span>] <span class="string">"65"</span>  <span class="string">"66"</span>  <span class="string">"67"</span>  <span class="string">"68"</span>  <span class="string">"69"</span>  <span class="string">"70"</span>  <span class="string">"71"</span>  <span class="string">"72"</span>  <span class="string">"73"</span> </div><div class="line">[<span class="number">28</span>] <span class="string">"74"</span>  <span class="string">"75"</span>  <span class="string">"76"</span>  <span class="string">"77"</span>  <span class="string">"78"</span>  <span class="string">"79"</span>  <span class="string">"80"</span>  <span class="string">"81"</span>  <span class="string">"82"</span> </div><div class="line">[<span class="number">37</span>] <span class="string">"83"</span>  <span class="string">"84"</span>  <span class="string">"85"</span>  <span class="string">"86"</span>  <span class="string">"87"</span>  <span class="string">"88"</span>  <span class="string">"89"</span>  <span class="string">"90"</span>  <span class="string">"91"</span> </div><div class="line">[<span class="number">46</span>] <span class="string">"92"</span>  <span class="string">"93"</span>  <span class="string">"94"</span>  <span class="string">"95"</span>  <span class="string">"96"</span>  <span class="string">"97"</span>  <span class="string">"98"</span>  <span class="string">"99"</span>  <span class="string">"100"</span></div><div class="line">[<span class="number">55</span>] <span class="string">"101"</span> <span class="string">"102"</span> <span class="string">"103"</span> <span class="string">"104"</span> <span class="string">"105"</span> <span class="string">"106"</span> <span class="string">"107"</span> <span class="string">"108"</span> <span class="string">"109"</span></div><div class="line">[<span class="number">64</span>] <span class="string">"110"</span> <span class="string">"111"</span> <span class="string">"112"</span> <span class="string">"113"</span> <span class="string">"114"</span> <span class="string">"115"</span> <span class="string">"116"</span> <span class="string">"117"</span></div><div class="line"></div><div class="line">$class</div><div class="line">[<span class="number">1</span>] <span class="string">"data.frame"</span></div></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt; body[<span class="number">1</span>:<span class="number">5</span>,]</div><div class="line"></div><div class="line">   age DEXfat waistcirc hipcirc elbowbreadth kneebreadth anthro3a anthro3b anthro3c anthro4</div><div class="line"><span class="number">47</span>  <span class="number">57</span>  <span class="number">41.68</span>     <span class="number">100.0</span>   <span class="number">112.0</span>          <span class="number">7.1</span>         <span class="number">9.4</span>     <span class="number">4.42</span>     <span class="number">4.95</span>     <span class="number">4.50</span>    <span class="number">6.13</span></div><div class="line"><span class="number">48</span>  <span class="number">65</span>  <span class="number">43.29</span>      <span class="number">99.5</span>   <span class="number">116.5</span>          <span class="number">6.5</span>         <span class="number">8.9</span>     <span class="number">4.63</span>     <span class="number">5.01</span>     <span class="number">4.48</span>    <span class="number">6.37</span></div><div class="line"><span class="number">49</span>  <span class="number">59</span>  <span class="number">35.41</span>      <span class="number">96.0</span>   <span class="number">108.5</span>          <span class="number">6.2</span>         <span class="number">8.9</span>     <span class="number">4.12</span>     <span class="number">4.74</span>     <span class="number">4.60</span>    <span class="number">5.82</span></div><div class="line"><span class="number">50</span>  <span class="number">58</span>  <span class="number">22.79</span>      <span class="number">72.0</span>    <span class="number">96.5</span>          <span class="number">6.1</span>         <span class="number">9.2</span>     <span class="number">4.03</span>     <span class="number">4.48</span>     <span class="number">3.91</span>    <span class="number">5.66</span></div><div class="line"><span class="number">51</span>  <span class="number">60</span>  <span class="number">36.42</span>      <span class="number">89.5</span>   <span class="number">100.5</span>          <span class="number">7.1</span>        <span class="number">10.0</span>     <span class="number">4.24</span>     <span class="number">4.68</span>     <span class="number">4.15</span>    <span class="number">5.91</span></div></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt; set.seed(<span class="number">1234</span>)</div><div class="line">&gt; ind &lt;- sample(<span class="number">2</span>, nrow(bodyfat), replace = <span class="literal">TRUE</span>, prob = c(<span class="number">0.7</span>,<span class="number">0.3</span>))</div><div class="line">&gt; bodyfat.train &lt;- bodyfat[ind == <span class="number">1</span>,]</div><div class="line">&gt; bodyfat.test &lt;- bodyfat[ind == <span class="number">2</span>,]</div><div class="line">&gt; <span class="keyword">library</span>(rpart)</div></pre></td></tr></table></figure>
+<ul>
+<li>编写公式</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; myFormula &lt;- DEXfat ~ age + waistcirc + hipcirc + elbowbreadth + kneebreadth</div></pre></td></tr></table></figure>
+<ul>
+<li>训练决策树</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; bodyfat_rpart &lt;- rpart(myFormula, data = bodyfat.train, control = rpart.control(minsplit = <span class="number">10</span>))</div></pre></td></tr></table></figure>
+<ul>
+<li>绘制决策树</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="keyword">library</span>(rattle)</div><div class="line">&gt; <span class="keyword">library</span>(rpart.plot)</div><div class="line">&gt; <span class="keyword">library</span>(RColorBrewer)</div><div class="line">&gt; fancyRpartPlot(bodyfat_rpart)</div></pre></td></tr></table></figure>
+<p><img src="https://github.com/yumuzi/images/raw/master/20161212_bodyfat_dtc1.png" alt=""></p>
+<ul>
+<li>选择预测误差最小值的预测树，从而优化模型</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt; opt &lt;- which.min(bodyfat_rpart$cptable[,<span class="string">"xerror"</span>])</div><div class="line">&gt; cp &lt;- bodyfat_rpart$cptable[opt,<span class="string">"CP"</span>]</div><div class="line">&gt; bodyfat_prune &lt;- prune(bodyfat_rpart, cp = cp)</div><div class="line">&gt; fancyRpartPlot(bodyfat_prune)</div></pre></td></tr></table></figure>
+<p><img src="https://github.com/yumuzi/images/raw/master/20161212_bodyfat_dtc2.png" alt=""></p>
+<ul>
+<li>在测试集上测试，并与实际值进行对比</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt; DEXfat_pred &lt;- predict(bodyfat_prune, newdata = bodyfat.test)</div><div class="line">&gt; xlim &lt;- range(bodyfat$DEXfat)</div><div class="line">&gt; plot(DEXfat_pred ~ DEXfat, data = bodyfat.test, xlab = <span class="string">"Observed"</span>, ylab = <span class="string">"Predicted"</span>, ylim = xlim, xlim = xlim)</div><div class="line">&gt; abline(a = <span class="number">0</span>, b = <span class="number">1</span>)</div></pre></td></tr></table></figure>
+<p><img src="https://github.com/yumuzi/images/raw/master/20161212_bodyfat_dtc3.png" alt=""></p>
+<ul>
+<li>代码汇总</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">data(<span class="string">"bodyfat"</span>, package = <span class="string">"TH.data"</span>)</div><div class="line">dim(bodyfat)</div><div class="line"></div><div class="line">attributes(bodyfat)</div><div class="line"></div><div class="line">body[<span class="number">1</span>:<span class="number">5</span>,]</div><div class="line"></div><div class="line">set.seed(<span class="number">1234</span>)</div><div class="line">ind &lt;- sample(<span class="number">2</span>, nrow(bodyfat), replace = <span class="literal">TRUE</span>, prob = c(<span class="number">0.7</span>,<span class="number">0.3</span>))</div><div class="line">bodyfat.train &lt;- bodyfat[ind == <span class="number">1</span>,]</div><div class="line">bodyfat.test &lt;- bodyfat[ind == <span class="number">2</span>,]</div><div class="line"><span class="keyword">library</span>(rpart)</div><div class="line"></div><div class="line">myFormula &lt;- DEXfat ~ age + waistcirc + hipcirc + elbowbreadth + kneebreadth</div><div class="line"></div><div class="line">bodyfat_rpart &lt;- rpart(myFormula, data = bodyfat.train, control = rpart.control(minsplit = <span class="number">10</span>))</div><div class="line"></div><div class="line"><span class="keyword">library</span>(rattle)</div><div class="line"><span class="keyword">library</span>(rpart.plot)</div><div class="line"><span class="keyword">library</span>(RColorBrewer)</div><div class="line">fancyRpartPlot(bodyfat_rpart)</div><div class="line"></div><div class="line">opt &lt;- which.min(bodyfat_rpart$cptable[,<span class="string">"xerror"</span>])</div><div class="line">cp &lt;- bodyfat_rpart$cptable[opt,<span class="string">"CP"</span>]</div><div class="line">bodyfat_prune &lt;- prune(bodyfat_rpart, cp = cp)</div><div class="line">fancyRpartPlot(bodyfat_prune)</div><div class="line"></div><div class="line">DEXfat_pred &lt;- predict(bodyfat_prune, newdata = bodyfat.test)</div><div class="line">xlim &lt;- range(bodyfat$DEXfat)</div><div class="line">plot(DEXfat_pred ~ DEXfat, data = bodyfat.test, xlab = <span class="string">"Observed"</span>, ylab = <span class="string">"Predicted"</span>, ylim = xlim, xlim = xlim)</div><div class="line">abline(a = <span class="number">0</span>, b = <span class="number">1</span>)</div></pre></td></tr></table></figure>
+<h1 id="使用随机森林"><a href="#使用随机森林" class="headerlink" title="使用随机森林"></a>使用随机森林</h1><ul>
+<li>这里使用包<code>randomForest</code>，并利用iris(鸢尾花)数据建立一个预测模型；</li>
+<li>包里面的<code>randomForest()</code>函数有两点不足：第一，它不能处理缺失值，使得用户必须在使用该函数之前填补这些缺失值；第二，每个分类属性的最大数量不能超过32个，如果属性超过32个，那么在使用该函数之前那些属性必须被转化；</li>
+<li>另外，也可以通过包<code>cforest</code>建立随机森林，并且该包里面的函数并不受属性的最大数量限制，尽管如此，高维的分类属性会使得它建立随机森林的时候消耗大量的内存和时间；</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&gt; ind &lt;- sample(<span class="number">2</span>, nrow(iris), replace = <span class="literal">TRUE</span>, prob = c(<span class="number">0.7</span>, <span class="number">0.3</span>))</div><div class="line">&gt; trainData &lt;- iris[ind == <span class="number">1</span>,]</div><div class="line">&gt; testData &lt;- iris[ind == <span class="number">2</span>,]</div><div class="line">&gt; install.packages(<span class="string">"randomForest"</span>)</div><div class="line">&gt; <span class="keyword">library</span>(randomForest)</div><div class="line">&gt; myFormula &lt;- Species ~ .  <span class="comment"># 'Species ~ .'表示'Species'与其他所有属性之间的等式</span></div><div class="line">&gt; rf &lt;- randomForest(myFormula, data = trainData, ntree = <span class="number">100</span>, proximity = <span class="literal">TRUE</span>)</div><div class="line"></div><div class="line">             setosa versicolor virginica</div><div class="line">  setosa         <span class="number">36</span>          <span class="number">0</span>         <span class="number">0</span></div><div class="line">  versicolor      <span class="number">0</span>         <span class="number">31</span>         <span class="number">2</span></div><div class="line">  virginica       <span class="number">0</span>          <span class="number">1</span>        <span class="number">34</span></div></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&gt; print(rf)</div><div class="line"></div><div class="line">Call:</div><div class="line"> randomForest(formula = myFormula, data = trainData, ntree = <span class="number">100</span>,      proximity = <span class="literal">TRUE</span>) </div><div class="line">               Type of random forest: classification</div><div class="line">                     Number of trees: <span class="number">100</span></div><div class="line">No. of variables tried at each split: <span class="number">2</span></div><div class="line"></div><div class="line">        OOB estimate of  error rate: <span class="number">2.88</span>%</div><div class="line">Confusion matrix:</div><div class="line">           setosa versicolor virginica class.error</div><div class="line">setosa         <span class="number">36</span>          <span class="number">0</span>         <span class="number">0</span>  <span class="number">0.00000000</span></div><div class="line">versicolor      <span class="number">0</span>         <span class="number">31</span>         <span class="number">1</span>  <span class="number">0.03125000</span></div><div class="line">virginica       <span class="number">0</span>          <span class="number">2</span>        <span class="number">34</span>  <span class="number">0.05555556</span></div></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&gt; irisPred &lt;- predict(rf, newdata = testData)</div><div class="line">&gt; table(irisPred, testData$Species)</div><div class="line"></div><div class="line">irisPred     setosa versicolor virginica</div><div class="line">  setosa         <span class="number">14</span>          <span class="number">0</span>         <span class="number">0</span></div><div class="line">  versicolor      <span class="number">0</span>         <span class="number">17</span>         <span class="number">3</span></div><div class="line">  virginica       <span class="number">0</span>          <span class="number">1</span>        <span class="number">11</span></div></pre></td></tr></table></figure>
+<ul>
+<li>绘制每一个观测值被判断正确的概率图</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; plot(margin(rf, testData$Species))</div></pre></td></tr></table></figure>
+<p><img src="https://github.com/yumuzi/images/raw/master/20161212_randomForest.png" alt=""></p>
+<ul>
+<li>代码汇总</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">ind &lt;- sample(<span class="number">2</span>, nrow(iris), replace = <span class="literal">TRUE</span>, prob = c(<span class="number">0.7</span>, <span class="number">0.3</span>))</div><div class="line">trainData &lt;- iris[ind == <span class="number">1</span>,]</div><div class="line">testData &lt;- iris[ind == <span class="number">2</span>,]</div><div class="line"></div><div class="line">install.packages(<span class="string">"randomForest"</span>)</div><div class="line"><span class="keyword">library</span>(randomForest)</div><div class="line"></div><div class="line">myFormula &lt;- Species ~ .</div><div class="line">rf &lt;- randomForest(myFormula, data = trainData, ntree = <span class="number">100</span>, proximity = <span class="literal">TRUE</span>)</div><div class="line">table(predict(rf), trainData$Species)</div><div class="line"></div><div class="line">print(rf)</div><div class="line"></div><div class="line">irisPred &lt;- predict(rf, newdata = testData)</div><div class="line">table(irisPred, testData$Species)</div><div class="line"></div><div class="line">plot(margin(rf, testData$Species))</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MachineLearning/" rel="tag"># MachineLearning</a>
+          
+            <a href="/tags/R/" rel="tag"># R</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/fengyoulan/" rel="next" title="冯友兰《中国哲学史》阅读摘录">
+                <i class="fa fa-chevron-left"></i> 冯友兰《中国哲学史》阅读摘录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMTY5OS84MjYz"></div>
+    </div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Yinkit Lee</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文档"><span class="nav-number">1.</span> <span class="nav-text">参考文档</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用包party"><span class="nav-number">2.</span> <span class="nav-text">使用包party</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用包rpart"><span class="nav-number">3.</span> <span class="nav-text">使用包rpart</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用随机森林"><span class="nav-number">4.</span> <span class="nav-text">使用随机森林</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">Copyright &copy; 2016 &mdash; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yinkit Lee</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 訪客數
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 訪問量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("zLSdflMuUY1ECQoMfs2yesmi-gzGzoHsz", "vHXMGspVWONNGTitY8143H6v");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
