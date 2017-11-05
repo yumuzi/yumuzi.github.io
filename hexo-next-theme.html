@@ -542,6 +542,17 @@
 
       
       
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+		    <div style="color:rgb(0, 0, 0); font-size:13px; letter-spacing:3px;">看完记得五星好评哦亲～</div>
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
       
 
       
@@ -813,7 +824,7 @@ show_date_time();
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">Copyright &copy; 2016 &mdash; <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
+  <span class="with-love" id="heart">
     <i class="fa fa-free-code-camp"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">yinkit</span>
@@ -1423,6 +1434,23 @@ show_date_time();
   
 
   
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 7872,
+    el: 'wpac-rating',
+    color: 'ff7600'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
 
   
 
