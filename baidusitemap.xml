@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/windows-hexo-next.html</loc>
+    <lastmod>2017-11-05T13:17:38.235Z</lastmod>
+    <data>
+        <display>
+        <title>Windows系統下安裝Hexo博客及配置NexT模板</title>
+        <pubTime>2017-11-05T09:53:23.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>next</tag>
+         
+        <tag>windows</tag>
+         
+        <tag>github</tag>
+         
+         
+           
+             
+              <breadCrumb title="技術" url="https://yumuzi.github.io/categories/%E6%8A%80%E8%A1%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+  <url>
+    <loc>https://yumuzi.github.io/decisionTreeR.html</loc>
+    <lastmod>2016-12-13T05:34:09.000Z</lastmod>
+    <data>
+        <display>
+        <title>决策树与R语言</title>
+        <pubTime>2016-12-12T15:20:05.000Z</pubTime>
+        
+        <tag>MachineLearning</tag>
+         
+        <tag>R</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://yumuzi.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/fengyoulan.html</loc>
+    <lastmod>2016-11-30T14:47:10.000Z</lastmod>
+    <data>
+        <display>
+        <title>冯友兰《中国哲学史》阅读摘录</title>
+        <pubTime>2016-11-30T14:35:03.000Z</pubTime>
+        
+        <tag>随笔</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书" url="https://yumuzi.github.io/categories/%E8%AF%BB%E4%B9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/webprogramming.html</loc>
+    <lastmod>2016-11-25T05:49:48.000Z</lastmod>
+    <data>
+        <display>
+        <title>网络编程学习过程中的点滴记录</title>
+        <pubTime>2016-11-25T04:35:02.000Z</pubTime>
+        
+        <tag>programming</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="https://yumuzi.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/Ubuntu-softwares.html</loc>
+    <lastmod>2016-09-23T16:31:56.000Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu 系统常用软件汇总</title>
+        <pubTime>2016-04-30T14:42:23.000Z</pubTime>
+        
+        <tag>ubuntu</tag>
+         
+        <tag>softwares</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://yumuzi.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/oh-my-zsh-install.html</loc>
+    <lastmod>2016-09-23T14:53:40.000Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu 安装和配置 oh-my-zsh</title>
+        <pubTime>2016-05-08T13:35:19.000Z</pubTime>
+        
+        <tag>ubuntu</tag>
+         
+        <tag>zsh</tag>
+         
+        <tag>oh-my-zsh</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://yumuzi.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/tuerqi-qianzheng.html</loc>
+    <lastmod>2016-09-03T14:29:37.000Z</lastmod>
+    <data>
+        <display>
+        <title>研究生期间去土耳其参加国际会议相关手续办理流程</title>
+        <pubTime>2016-09-03T13:44:50.000Z</pubTime>
+        
+        <tag>visa</tag>
+         
+         
+           
+             
+              <breadCrumb title="学术" url="https://yumuzi.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/ubuntu-r-install.html</loc>
+    <lastmod>2016-07-12T12:26:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu 14.04 安装 R 语言环境</title>
+        <pubTime>2016-07-08T15:23:57.000Z</pubTime>
+        
+        <tag>ubuntu</tag>
+         
+        <tag>r</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://yumuzi.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/python-ymgs.html</loc>
+    <lastmod>2016-07-08T15:33:06.000Z</lastmod>
+    <data>
+        <display>
+        <title>Python 操作 MySQL 数据库</title>
+        <pubTime>2016-07-08T15:27:15.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>mysql</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="https://yumuzi.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/Hexo-Ubuntu-GithubPages.html</loc>
+    <lastmod>2016-07-05T14:26:07.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo-Ubuntu-GithubPages 搭建独立博客</title>
+        <pubTime>2016-04-29T07:00:43.000Z</pubTime>
+        
+        <tag>ubuntu</tag>
+         
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://yumuzi.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/hexo-next-theme.html</loc>
+    <lastmod>2016-06-30T13:31:41.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo 博客 NexT 模板配置之记录</title>
+        <pubTime>2016-06-30T11:12:57.000Z</pubTime>
+        
+        <tag>blog</tag>
+         
+        <tag>hexo</tag>
+         
+        <tag>next</tag>
+         
+        <tag>theme</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://yumuzi.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/ubuntu-pandoc.html</loc>
+    <lastmod>2016-06-29T11:09:05.000Z</lastmod>
+    <data>
+        <display>
+        <title>pandoc 在 Ubuntu 中的安装与使用</title>
+        <pubTime>2016-05-26T14:53:28.000Z</pubTime>
+        
+        <tag>ubuntu</tag>
+         
+        <tag>pandoc</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://yumuzi.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/web-programming.html</loc>
+    <lastmod>2016-06-29T11:07:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>网络编程学习之路</title>
+        <pubTime>2016-05-23T05:18:44.000Z</pubTime>
+        
+        <tag>mysql</tag>
+         
+        <tag>programming</tag>
+         
+        <tag>php</tag>
+         
+        <tag>html</tag>
+         
+        <tag>css</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="https://yumuzi.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/vim-tutor.html</loc>
+    <lastmod>2016-06-29T11:06:43.000Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu 中 Vim 使用的点滴记录</title>
+        <pubTime>2016-05-07T09:26:29.000Z</pubTime>
+        
+        <tag>ubuntu</tag>
+         
+        <tag>vim</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://yumuzi.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/Ubuntu-python.html</loc>
+    <lastmod>2016-06-29T11:04:26.000Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu + Python 学习之路</title>
+        <pubTime>2016-05-23T03:38:36.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>ubuntu</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="https://yumuzi.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/ubuntu-libsvm.html</loc>
+    <lastmod>2016-06-29T11:03:50.000Z</lastmod>
+    <data>
+        <display>
+        <title>LibSVM 在 Ubuntu 系统的安装与使用</title>
+        <pubTime>2016-05-26T13:40:50.000Z</pubTime>
+        
+        <tag>ubuntu</tag>
+         
+        <tag>libsvm</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://yumuzi.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/Ubuntu-latex.html</loc>
+    <lastmod>2016-06-29T11:02:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu 14.04 安装 Texlive2015</title>
+        <pubTime>2016-05-04T07:49:53.000Z</pubTime>
+        
+        <tag>ubuntu</tag>
+         
+        <tag>latex</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://yumuzi.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/TongjiThesis.html</loc>
+    <lastmod>2016-06-29T11:01:54.000Z</lastmod>
+    <data>
+        <display>
+        <title>同济大学毕业论文LATEX模板</title>
+        <pubTime>2016-04-29T06:42:00.000Z</pubTime>
+        
+        <tag>latex</tag>
+         
+        <tag>thesis</tag>
+         
+         
+           
+             
+              <breadCrumb title="学术" url="https://yumuzi.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/spider.html</loc>
+    <lastmod>2016-06-29T11:01:33.000Z</lastmod>
+    <data>
+        <display>
+        <title>用 Scrapy 实现的一个网络爬虫</title>
+        <pubTime>2016-06-22T12:05:26.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>spider</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="https://yumuzi.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/softwares.html</loc>
+    <lastmod>2016-06-29T11:01:14.000Z</lastmod>
+    <data>
+        <display>
+        <title>常用软件汇总整理</title>
+        <pubTime>2016-04-29T06:43:11.000Z</pubTime>
+        
+        <tag>softwares</tag>
+         
+        <tag>windows</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://yumuzi.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/sfepy-install.html</loc>
+    <lastmod>2016-06-29T11:00:59.000Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu 14.04 安装 Python 有限元模块 sfepy</title>
+        <pubTime>2016-05-25T14:49:01.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>ubuntu</tag>
+         
+        <tag>sfepy</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="https://yumuzi.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/python-applications.html</loc>
+    <lastmod>2016-06-29T11:00:41.000Z</lastmod>
+    <data>
+        <display>
+        <title>python 实现的若干小程序</title>
+        <pubTime>2016-06-21T01:17:23.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="https://yumuzi.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/pyPdf.html</loc>
+    <lastmod>2016-06-29T11:00:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>一个读取文件夹内所有PDF文件标题的python小程序</title>
+        <pubTime>2016-05-05T14:17:13.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="https://yumuzi.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/Django-firstblog.html</loc>
+    <lastmod>2016-06-29T10:58:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>用 Django 开发个人博客</title>
+        <pubTime>2016-06-29T06:48:45.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>django</tag>
+         
+        <tag>blog</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="https://yumuzi.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/AutoLisp.html</loc>
+    <lastmod>2016-06-29T10:58:29.000Z</lastmod>
+    <data>
+        <display>
+        <title>AutoLISP 开发者指南</title>
+        <pubTime>2016-04-29T06:38:47.000Z</pubTime>
+        
+        <tag>autolisp</tag>
+         
+        <tag>autocad</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="https://yumuzi.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/libsvm-python.html</loc>
+    <lastmod>2016-06-29T10:57:56.000Z</lastmod>
+    <data>
+        <display>
+        <title>Windows 7 + LIBSVM + Python 安装及使用说明</title>
+        <pubTime>2016-05-05T07:39:23.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>libsvm</tag>
+         
+         
+           
+             
+              <breadCrumb title="学术" url="https://yumuzi.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/Latex-learning.html</loc>
+    <lastmod>2016-06-29T10:56:38.000Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu14.04 + LaTeX 学习之路</title>
+        <pubTime>2016-05-04T08:55:57.000Z</pubTime>
+        
+        <tag>ubuntu</tag>
+         
+        <tag>latex</tag>
+         
+         
+           
+             
+              <breadCrumb title="学术" url="https://yumuzi.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/latex-install-manual.html</loc>
+    <lastmod>2016-06-29T10:56:17.000Z</lastmod>
+    <data>
+        <display>
+        <title>Windows 7 x86/x64 安装LaTeX教程</title>
+        <pubTime>2016-04-29T06:40:36.000Z</pubTime>
+        
+        <tag>latex</tag>
+         
+        <tag>windows</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://yumuzi.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/guiqulaixi.html</loc>
+    <lastmod>2016-06-29T10:55:35.000Z</lastmod>
+    <data>
+        <display>
+        <title>归去来兮辞</title>
+        <pubTime>2016-04-30T14:55:24.000Z</pubTime>
+        
+        <tag>随笔</tag>
+         
+        <tag>歌赋</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书" url="https://yumuzi.github.io/categories/%E8%AF%BB%E4%B9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/Git-readme.html</loc>
+    <lastmod>2016-06-29T10:55:17.000Z</lastmod>
+    <data>
+        <display>
+        <title>Git 使用简易指南</title>
+        <pubTime>2016-05-05T02:24:57.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+        <tag>bitbucket</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://yumuzi.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/book-logs.html</loc>
+    <lastmod>2016-06-29T10:54:58.000Z</lastmod>
+    <data>
+        <display>
+        <title>读书笔记</title>
+        <pubTime>2016-05-08T09:15:14.000Z</pubTime>
+        
+        <tag>book</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书" url="https://yumuzi.github.io/categories/%E8%AF%BB%E4%B9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/beamer-tutor.html</loc>
+    <lastmod>2016-06-29T10:54:17.000Z</lastmod>
+    <data>
+        <display>
+        <title>LaTeX-Beamer 学习之路</title>
+        <pubTime>2016-05-12T13:27:40.000Z</pubTime>
+        
+        <tag>latex</tag>
+         
+        <tag>beamer</tag>
+         
+         
+           
+             
+              <breadCrumb title="学术" url="https://yumuzi.github.io/categories/%E5%AD%A6%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+</urlset>

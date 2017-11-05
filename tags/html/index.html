@@ -5,12 +5,12 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh-tw">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
+<meta name="theme-color" content="#fff">
 
 
 
@@ -19,7 +19,7 @@
     
     
   <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -77,20 +77,23 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Yinkit Lee" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="benevolence" type="application/atom+xml" />
 
 
 
 
 
 
+<meta name="description" content="躬自厚而薄責於人">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Yinkit Lee">
+<meta property="og:title" content="benevolence">
 <meta property="og:url" content="https://yumuzi.github.io/tags/html/index.html">
-<meta property="og:site_name" content="Yinkit Lee">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:site_name" content="benevolence">
+<meta property="og:description" content="躬自厚而薄責於人">
+<meta property="og:locale" content="zh-tw">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yinkit Lee">
+<meta name="twitter:title" content="benevolence">
+<meta name="twitter:description" content="躬自厚而薄責於人">
 
 
 
@@ -98,9 +101,9 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Muse',
     version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -126,7 +129,7 @@
 
 
 
-  <title>标签: html | Yinkit Lee</title>
+  <title>標籤: html | benevolence</title>
   
 
 
@@ -147,7 +150,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
 
   
   
@@ -165,12 +168,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Yinkit Lee</span>
+        <span class="site-title">benevolence</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <p class="site-subtitle">獨立之精神，自由之思想</p>
       
   </div>
 
@@ -195,7 +198,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            首页
+            首頁
           </a>
         </li>
       
@@ -205,7 +208,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            标签
+            標籤
           </a>
         </li>
       
@@ -215,7 +218,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            分类
+            分類
           </a>
         </li>
       
@@ -225,7 +228,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            归档
+            歸檔
           </a>
         </li>
       
@@ -238,7 +241,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            搜索
+            檢索
           </a>
         </li>
       
@@ -289,7 +292,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>html<small>标签</small>
+        <h1>html<small>標籤</small>
         </h1>
       </div>
 
@@ -301,7 +304,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/web-programming/" itemprop="url">
+            <a class="post-title-link" href="/web-programming.html" itemprop="url">
               
                 <span itemprop="name">网络编程学习之路</span>
               
@@ -352,6 +355,8 @@
 
   <aside id="sidebar" class="sidebar">
     
+      <div id="sidebar-dimmer"></div>
+    
     <div class="sidebar-inner">
 
       
@@ -362,8 +367,12 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">Yinkit Lee</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="yinkit" />
+            
+              <p class="site-author-name" itemprop="name">yinkit</p>
+              <p class="site-description motion-element" itemprop="description">躬自厚而薄責於人</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -373,8 +382,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">31</span>
-                  <span class="site-state-item-name">日志</span>
+                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-name">文章</span>
                 </a>
               </div>
             
@@ -384,8 +393,8 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">分类</span>
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分類</span>
                 </a>
               </div>
             
@@ -395,8 +404,8 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">35</span>
-                  <span class="site-state-item-name">标签</span>
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">標籤</span>
                 </a>
               </div>
             
@@ -414,12 +423,70 @@
 
           <div class="links-of-author motion-element">
             
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/yumuzi" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:yinkitli@gmail.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com/yinkitli" target="_blank" title="Google">
+                    
+                      <i class="fa fa-fw fa-google"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/yinkit_lee" target="_blank" title="Twitter">
+                    
+                      <i class="fa fa-fw fa-twitter"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://instagram.com/yinkitli" target="_blank" title="Instagram">
+                    
+                      <i class="fa fa-fw fa-instagram"></i></a>
+                </span>
+              
+            
           </div>
 
           
           
 
           
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                友情鏈接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://forfrigg.com/#gsc.tab=0" title="forfrigg" target="_blank">forfrigg</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://aws.amazon.com/" title="aws" target="_blank">aws</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://zh.wikipedia.org/wiki/Wikipedia:%E9%A6%96%E9%A1%B5" title="wikipedia" target="_blank">wikipedia</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://stackoverflow.com/" title="stackoverflow" target="_blank">stackoverflow</a>
+                  </li>
+                
+              </ul>
+            </div>
           
 
           
@@ -443,23 +510,17 @@
       <div class="footer-inner">
         <div class="copyright">Copyright &copy; 2016 &mdash; <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-free-code-camp"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Yinkit Lee</span>
+  <span class="author" itemprop="copyrightHolder">yinkit</span>
 
   
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
 
 
 
@@ -526,8 +587,6 @@
   
 
 
-  
-
 
 
 
@@ -555,9 +614,6 @@
 
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-  
-  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
   
