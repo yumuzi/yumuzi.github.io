@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>李彥傑</title>
   
-  <subtitle>獨立之精神，自由之思想</subtitle>
+  <subtitle>自由之思想，獨立之精神</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yumuzi.github.io/"/>
@@ -47,9 +47,9 @@
     
       <category term="hexo" scheme="https://yumuzi.github.io/tags/hexo/"/>
     
-      <category term="windows" scheme="https://yumuzi.github.io/tags/windows/"/>
-    
       <category term="next" scheme="https://yumuzi.github.io/tags/next/"/>
+    
+      <category term="windows" scheme="https://yumuzi.github.io/tags/windows/"/>
     
       <category term="github" scheme="https://yumuzi.github.io/tags/github/"/>
     
