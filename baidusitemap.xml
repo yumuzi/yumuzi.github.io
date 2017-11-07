@@ -3,6 +3,32 @@
 
 
     
+  <url>
+    <loc>https://yumuzi.github.io/windows-hexo-next.html</loc>
+    <lastmod>2017-11-07T13:54:07.640Z</lastmod>
+    <data>
+        <display>
+        <title>Windows系統下安裝Hexo博客及配置NexT模板</title>
+        <pubTime>2017-11-05T09:53:23.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>next</tag>
+         
+        <tag>windows</tag>
+         
+        <tag>github</tag>
+         
+         
+           
+             
+              <breadCrumb title="技術" url="https://yumuzi.github.io/categories/%E6%8A%80%E8%A1%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>https://yumuzi.github.io/fengyoulan.html</loc>
@@ -679,32 +705,6 @@
         <tag>autolisp</tag>
          
         <tag>autocad</tag>
-         
-         
-           
-             
-              <breadCrumb title="技術" url="https://yumuzi.github.io/categories/%E6%8A%80%E8%A1%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://yumuzi.github.io/windows-hexo-next.html</loc>
-    <lastmod>2017-11-05T15:29:07.394Z</lastmod>
-    <data>
-        <display>
-        <title>Windows系統下安裝Hexo博客及配置NexT模板</title>
-        <pubTime>2017-11-05T09:53:23.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-        <tag>next</tag>
-         
-        <tag>windows</tag>
-         
-        <tag>github</tag>
          
          
            
