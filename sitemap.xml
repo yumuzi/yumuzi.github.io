@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yumuzi.github.io/top/index.html</loc>
+    
+    <lastmod>2017-11-07T12:46:15.477Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yumuzi.github.io/fengyoulan.html</loc>
     
     <lastmod>2017-11-05T15:37:37.368Z</lastmod>
@@ -222,13 +229,6 @@
     <loc>https://yumuzi.github.io/windows-hexo-next.html</loc>
     
     <lastmod>2017-11-05T15:29:07.394Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yumuzi.github.io/top/index.html</loc>
-    
-    <lastmod>2017-11-05T14:29:09.431Z</lastmod>
     
   </url>
   
