@@ -3,6 +3,45 @@
   
     
     <entry>
+      <title><![CDATA[當前比較實用的同步盤簡介]]></title>
+      <url>/cloud-drive.html</url>
+      <content type="html"><![CDATA[<p>本文介紹的是能夠在不同設備之間進行文件同步的“同步盤”，而非百度網盤一類僅能夠存儲文件的雲盤，特此說明。隨著快盤等一眾同步盤的關閉，國內免費實用的同步盤幾乎全軍覆沒，為此本文僅介紹幾家國外的同步盤，供大家參考。</p>
+<h2 id="MEGAsync1"><a href="#MEGAsync1" class="headerlink" title="MEGAsync1"></a>MEGAsync<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></h2><p>Mega同步盤擁有50G的免費存儲空間，目前其<a href="https://mega.nz/" target="_blank" rel="external">官網</a>已無法訪問，但桌面客戶端和手機APP仍然可用。若要使用需在官網註冊賬號，註冊頁面<a href="https://mega.nz/register" target="_blank" rel="external">傳送門</a>。</p>
+<p>推薦指數：★★★★☆</p>
+<h2 id="OneDrive2"><a href="#OneDrive2" class="headerlink" title="OneDrive2"></a>OneDrive<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></h2><p>OneDrive同步盤擁有5G的免費存儲空間，目前其<a href="https://onedrive.live.com/" target="_blank" rel="external">官網</a>已無法訪問，但桌面客戶端和手機APP仍然可用，而且同步速度極快。作為微軟的一款應用，若要使用僅需申請一個微軟郵箱即可，<a href="https://outlook.live.com/owa/" target="_blank" rel="external">Outlook</a>, <a href="https://signup.live.com/signup?lcid=1033&amp;wa=wsignin1.0&amp;rpsnv=13&amp;ct=1510402856&amp;rver=6.7.6640.0&amp;wp=MBI_SSL&amp;wreply=https%3a%2f%2foutlook.live.com%2fowa%2f%3fnlp%3d1%26signup%3d1%26RpsCsrfState%3d2227d956-70ea-518a-dd2c-1c5c73b155b9&amp;id=292841&amp;CBCXT=out&amp;lw=1&amp;fl=dob%2cflname%2cwld&amp;cobrandid=90015&amp;uaid=4cff0e2ac93c4106b3446ee8d2ca7ffb&amp;lic=1" target="_blank" rel="external">Hotmail</a>。</p>
+<p>推薦指數：★★★★★</p>
+<h2 id="Google-Drive3"><a href="#Google-Drive3" class="headerlink" title="Google Drive3"></a>Google Drive<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup></h2><p>GoogleDrive是谷歌旗下的一款同步盤，擁有15G的免費存儲空間，是一款非常優秀的同步盤應用，與谷歌的其它服務結合使用，能很大程度上提高工作效率。但由於谷歌於2010年退出中國大陸，故其服務已無法訪問。其使用與OneDrive類似，需要申請一個<a href="https://mail.google.com/" target="_blank" rel="external">Gmail</a>郵箱。</p>
+<p>推薦指數：★★★★</p>
+<h2 id="Dropbox4"><a href="#Dropbox4" class="headerlink" title="Dropbox4"></a>Dropbox<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup></h2><p>Dropbox提供2G免費存儲空間，其最大的特點是增量同步，無需將整個文件重新上傳，節省流量資源和時間，但其服務國內無法訪問。</p>
+<p>推薦指數：★★★★</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style:none; padding-left: 0;"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">1.</span><span style="display: inline-block; vertical-align: top;"><a href="https://mega.nz/" target="_blank" rel="external">Mega.nz</a></span><a href="#fnref:1" rev="footnote"> ↩</a></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">2.</span><span style="display: inline-block; vertical-align: top;"><a href="https://onedrive.live.com/" target="_blank" rel="external">Microsoft OneDrive</a></span><a href="#fnref:2" rev="footnote"> ↩</a></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">3.</span><span style="display: inline-block; vertical-align: top;"><a href="https://www.google.com/drive/" target="_blank" rel="external">Google Drive</a></span><a href="#fnref:3" rev="footnote"> ↩</a></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">4.</span><span style="display: inline-block; vertical-align: top;"><a href="https://www.dropbox.com/" target="_blank" rel="external">Dropbox</a></span><a href="#fnref:4" rev="footnote"> ↩</a></li></ol></div></div>]]></content>
+      
+        <categories>
+            
+            <category> 技術 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 同步盤 </tag>
+            
+            <tag> 雲盤 </tag>
+            
+            <tag> mega </tag>
+            
+            <tag> onedrive </tag>
+            
+            <tag> googledrive </tag>
+            
+            <tag> dropbox </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Windows系統下安裝Hexo博客及配置NexT模板]]></title>
       <url>/windows-hexo-next.html</url>
       <content type="html"><![CDATA[<p>Ubuntu系統下Hexo博客及NexT模板的安裝與配置請參考我的另外兩篇博文<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>, <sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>。</p>
