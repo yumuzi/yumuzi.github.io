@@ -4,8 +4,30 @@
 
     
   <url>
+    <loc>https://yumuzi.github.io/jinyongwuxia.html</loc>
+    <lastmod>2017-11-30T12:47:31.383Z</lastmod>
+    <data>
+        <display>
+        <title>金庸武俠小說的版本學——舊版、新版、新修版</title>
+        <pubTime>2017-11-30T12:21:44.000Z</pubTime>
+        
+        <tag>金庸</tag>
+         
+        <tag>武俠</tag>
+         
+         
+           
+             
+              <breadCrumb title="文學" url="https://yumuzi.github.io/categories/%E6%96%87%E5%AD%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://yumuzi.github.io/Kaczynski-warning.html</loc>
-    <lastmod>2017-11-30T11:51:04.485Z</lastmod>
+    <lastmod>2017-11-30T12:09:12.627Z</lastmod>
     <data>
         <display>
         <title>卡辛斯基的警告</title>
@@ -214,9 +236,9 @@
         <title>网络编程学习之路</title>
         <pubTime>2016-05-23T05:18:44.000Z</pubTime>
         
-        <tag>programming</tag>
-         
         <tag>mysql</tag>
+         
+        <tag>programming</tag>
          
         <tag>php</tag>
          
@@ -394,9 +416,9 @@
         <title>Ubuntu 14.04 安装 Texlive2015</title>
         <pubTime>2016-05-04T07:49:53.000Z</pubTime>
         
-        <tag>ubuntu</tag>
-         
         <tag>latex</tag>
+         
+        <tag>ubuntu</tag>
          
          
            
@@ -634,9 +656,9 @@
         <title>Ubuntu14.04 + LaTeX 学习之路</title>
         <pubTime>2016-05-04T08:55:57.000Z</pubTime>
         
-        <tag>ubuntu</tag>
-         
         <tag>latex</tag>
+         
+        <tag>ubuntu</tag>
          
          
            
