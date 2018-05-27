@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>海闊天空</title>
   
-  <subtitle>自由之思想，獨立之精神</subtitle>
+  <subtitle>「獨立之精神，自由之思想」</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yumuzi.github.io/"/>
@@ -10,7 +10,7 @@
   <id>https://yumuzi.github.io/</id>
   
   <author>
-    <name>李彥傑</name>
+    <name>海闊天空</name>
     
   </author>
   
