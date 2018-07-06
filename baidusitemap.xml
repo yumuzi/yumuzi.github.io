@@ -4,8 +4,94 @@
 
     
   <url>
+    <loc>https://yumuzi.github.io/yunming2018.html</loc>
+    <lastmod>2018-07-06T13:28:13.775Z</lastmod>
+    <data>
+        <display>
+        <title>吉林大學李曉教授在2018年畢業典禮上的講話：國家命運與個人命運</title>
+        <pubTime>2018-07-06T12:10:22.000Z</pubTime>
+        
+        <tag>美國</tag>
+         
+        <tag>貿易戰</tag>
+         
+        <tag>命運</tag>
+         
+         
+           
+             
+              <breadCrumb title="社會" url="https://yumuzi.github.io/categories/%E7%A4%BE%E6%9C%83/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/guiqulaixi.html</loc>
+    <lastmod>2018-07-06T12:18:11.077Z</lastmod>
+    <data>
+        <display>
+        <title>归去来兮辞</title>
+        <pubTime>2016-04-30T14:55:24.000Z</pubTime>
+        
+        <tag>隨筆</tag>
+         
+        <tag>歌賦</tag>
+         
+         
+           
+             
+              <breadCrumb title="文學" url="https://yumuzi.github.io/categories/%E6%96%87%E5%AD%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/book-logs.html</loc>
+    <lastmod>2018-07-06T12:17:47.191Z</lastmod>
+    <data>
+        <display>
+        <title>读书笔记</title>
+        <pubTime>2016-05-08T09:15:14.000Z</pubTime>
+        
+        <tag>book</tag>
+         
+         
+           
+             
+              <breadCrumb title="文學" url="https://yumuzi.github.io/categories/%E6%96%87%E5%AD%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/fengshizhexue.html</loc>
+    <lastmod>2018-07-06T12:17:24.954Z</lastmod>
+    <data>
+        <display>
+        <title>冯友兰《中国哲学史》阅读摘录</title>
+        <pubTime>2016-11-30T14:35:03.000Z</pubTime>
+        
+        <tag>隨筆</tag>
+         
+         
+           
+             
+              <breadCrumb title="文學" url="https://yumuzi.github.io/categories/%E6%96%87%E5%AD%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://yumuzi.github.io/ziwoguanli.html</loc>
-    <lastmod>2018-06-22T13:17:01.496Z</lastmod>
+    <lastmod>2018-07-06T12:15:42.823Z</lastmod>
     <data>
         <display>
         <title>Managing Oneself</title>
@@ -16,7 +102,7 @@
          
            
              
-              <breadCrumb title="讀書" url="https://yumuzi.github.io/categories/%E8%AE%80%E6%9B%B8/"/>
+              <breadCrumb title="社會" url="https://yumuzi.github.io/categories/%E7%A4%BE%E6%9C%83/"/>
           
         </display>
     </data>
@@ -105,26 +191,6 @@
            
              
               <breadCrumb title="技術" url="https://yumuzi.github.io/categories/%E6%8A%80%E8%A1%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://yumuzi.github.io/fengshizhexue.html</loc>
-    <lastmod>2017-11-30T11:08:16.660Z</lastmod>
-    <data>
-        <display>
-        <title>冯友兰《中国哲学史》阅读摘录</title>
-        <pubTime>2016-11-30T14:35:03.000Z</pubTime>
-        
-        <tag>隨筆</tag>
-         
-         
-           
-             
-              <breadCrumb title="讀書" url="https://yumuzi.github.io/categories/%E8%AE%80%E6%9B%B8/"/>
           
         </display>
     </data>
@@ -273,28 +339,6 @@
     
     
   <url>
-    <loc>https://yumuzi.github.io/guiqulaixi.html</loc>
-    <lastmod>2017-11-05T15:37:18.286Z</lastmod>
-    <data>
-        <display>
-        <title>归去来兮辞</title>
-        <pubTime>2016-04-30T14:55:24.000Z</pubTime>
-        
-        <tag>隨筆</tag>
-         
-        <tag>歌賦</tag>
-         
-         
-           
-             
-              <breadCrumb title="讀書" url="https://yumuzi.github.io/categories/%E8%AE%80%E6%9B%B8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://yumuzi.github.io/web-programming.html</loc>
     <lastmod>2017-11-05T15:35:15.152Z</lastmod>
     <data>
@@ -416,9 +460,9 @@
         <title>Ubuntu + Python 学习之路</title>
         <pubTime>2016-05-23T03:38:36.000Z</pubTime>
         
-        <tag>ubuntu</tag>
-         
         <tag>python</tag>
+         
+        <tag>ubuntu</tag>
          
          
            
@@ -590,9 +634,9 @@
         <title>Ubuntu 14.04 安装 Python 有限元模块 sfepy</title>
         <pubTime>2016-05-25T14:49:01.000Z</pubTime>
         
-        <tag>ubuntu</tag>
-         
         <tag>python</tag>
+         
+        <tag>ubuntu</tag>
          
         <tag>sfepy</tag>
          
@@ -788,9 +832,9 @@
         <title>Hexo 博客 NexT 模板配置之记录</title>
         <pubTime>2016-06-30T11:12:57.000Z</pubTime>
         
-        <tag>hexo</tag>
-         
         <tag>blog</tag>
+         
+        <tag>hexo</tag>
          
         <tag>next</tag>
          
@@ -890,26 +934,6 @@
            
              
               <breadCrumb title="學術" url="https://yumuzi.github.io/categories/%E5%AD%B8%E8%A1%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://yumuzi.github.io/book-logs.html</loc>
-    <lastmod>2017-11-05T15:30:15.935Z</lastmod>
-    <data>
-        <display>
-        <title>读书笔记</title>
-        <pubTime>2016-05-08T09:15:14.000Z</pubTime>
-        
-        <tag>book</tag>
-         
-         
-           
-             
-              <breadCrumb title="讀書" url="https://yumuzi.github.io/categories/%E8%AE%80%E6%9B%B8/"/>
           
         </display>
     </data>
