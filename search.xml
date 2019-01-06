@@ -3,6 +3,59 @@
   
     
     <entry>
+      <title><![CDATA[網站清單]]></title>
+      <url>/website-list.html</url>
+      <content type="html"><![CDATA[<h2 id="讀書"><a href="#讀書" class="headerlink" title="讀書"></a>讀書</h2><ul>
+<li><a href="http://www.haodoo.net/?M=hd&amp;P=welcome" target="_blank" rel="external">好讀</a>：繁體、多種格式、精校、可下載。</li>
+<li><a href="https://shuge.org/" target="_blank" rel="external">書格</a>：PDF版、典藏圖書掃描、古籍古本、支持BTSync、可下載。</li>
+<li><a href="http://www.chineseclassic.com/" target="_blank" rel="external">數位經典</a>：繁體文章、無電子書籍可供下載。</li>
+<li><a href="https://opencc.byvoid.com/" target="_blank" rel="external">開放中文轉換 (Open Chinese Convert)</a>：簡繁中文轉換之利器。</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 技術 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 網站 </tag>
+            
+            <tag> 網頁 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[軟體清單]]></title>
+      <url>/software-list.html</url>
+      <content type="html"><![CDATA[<h2 id="電子書工具"><a href="#電子書工具" class="headerlink" title="電子書工具"></a>電子書工具</h2><ul>
+<li><a href="https://github.com/Sigil-Ebook/Sigil/releases/tag/0.9.10" target="_blank" rel="external">Sigil</a>：編輯Epub文檔。</li>
+<li><a href="https://calibre-ebook.com/" target="_blank" rel="external">Calibre</a>：管理電子書。</li>
+</ul>
+<p>持續更新~</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 技術 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 軟體 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Epub電子書簡體橫排轉繁體直排之步驟]]></title>
       <url>/epub-simpletotraditional.html</url>
       <content type="html"><![CDATA[<h2 id="參考文檔"><a href="#參考文檔" class="headerlink" title="參考文檔"></a>參考文檔</h2><ul>

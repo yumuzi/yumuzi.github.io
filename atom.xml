@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yumuzi.github.io/"/>
-  <updated>2018-12-31T12:54:11.000Z</updated>
+  <updated>2019-01-06T12:02:50.937Z</updated>
   <id>https://yumuzi.github.io/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>網站清單</title>
+    <link href="https://yumuzi.github.io/website-list.html"/>
+    <id>https://yumuzi.github.io/website-list.html</id>
+    <published>2019-01-06T11:52:49.000Z</published>
+    <updated>2019-01-06T12:02:50.937Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="讀書"><a href="#讀書" class="headerlink" title="讀書"></a>讀書</h2><ul><li><a href="http://www.haodoo.net/?M=hd&amp;P=welcome" target="_blank" rel="external">好讀</a>：繁體、多種格式、精校、可下載。</li><li><a href="https://shuge.org/" target="_blank" rel="external">書格</a>：PDF版、典藏圖書掃描、古籍古本、支持BTSync、可下載。</li><li><a href="http://www.chineseclassic.com/" target="_blank" rel="external">數位經典</a>：繁體文章、無電子書籍可供下載。</li><li><a href="https://opencc.byvoid.com/" target="_blank" rel="external">開放中文轉換 (Open Chinese Convert)</a>：簡繁中文轉換之利器。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;讀書&quot;&gt;&lt;a href=&quot;#讀書&quot; class=&quot;headerlink&quot; title=&quot;讀書&quot;&gt;&lt;/a&gt;讀書&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.haodoo.net/?M=hd&amp;amp;P=welcome&quot; target=&quot;_bla
+      
+    
+    </summary>
+    
+      <category term="技術" scheme="https://yumuzi.github.io/categories/%E6%8A%80%E8%A1%93/"/>
+    
+    
+      <category term="網站" scheme="https://yumuzi.github.io/tags/%E7%B6%B2%E7%AB%99/"/>
+    
+      <category term="網頁" scheme="https://yumuzi.github.io/tags/%E7%B6%B2%E9%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>軟體清單</title>
+    <link href="https://yumuzi.github.io/software-list.html"/>
+    <id>https://yumuzi.github.io/software-list.html</id>
+    <published>2019-01-06T11:46:00.000Z</published>
+    <updated>2019-01-06T11:51:12.337Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="電子書工具"><a href="#電子書工具" class="headerlink" title="電子書工具"></a>電子書工具</h2><ul><li><a href="https://github.com/Sigil-Ebook/Sigil/releases/tag/0.9.10" target="_blank" rel="external">Sigil</a>：編輯Epub文檔。</li><li><a href="https://calibre-ebook.com/" target="_blank" rel="external">Calibre</a>：管理電子書。</li></ul><p>持續更新~</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;電子書工具&quot;&gt;&lt;a href=&quot;#電子書工具&quot; class=&quot;headerlink&quot; title=&quot;電子書工具&quot;&gt;&lt;/a&gt;電子書工具&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Sigil-Ebook/Sigil/releas
+      
+    
+    </summary>
+    
+      <category term="技術" scheme="https://yumuzi.github.io/categories/%E6%8A%80%E8%A1%93/"/>
+    
+    
+      <category term="軟體" scheme="https://yumuzi.github.io/tags/%E8%BB%9F%E9%AB%94/"/>
+    
+  </entry>
   
   <entry>
     <title>Epub電子書簡體橫排轉繁體直排之步驟</title>
