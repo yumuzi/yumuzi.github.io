@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yumuzi.github.io/people-list.html</loc>
+    
+    <lastmod>2019-01-12T01:25:33.694Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yumuzi.github.io/shengyuanlun.html</loc>
+    
+    <lastmod>2019-01-12T00:45:15.681Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yumuzi.github.io/epub-simpletotraditional.html</loc>
+    
+    <lastmod>2019-01-08T12:01:00.427Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yumuzi.github.io/book-list.html</loc>
     
-    <lastmod>2019-01-07T12:57:32.754Z</lastmod>
+    <lastmod>2019-01-08T11:32:00.895Z</lastmod>
     
   </url>
   
@@ -26,13 +47,6 @@
     <loc>https://yumuzi.github.io/hanwengongmiaobei.html</loc>
     
     <lastmod>2019-01-05T14:22:50.213Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yumuzi.github.io/epub-simpletotraditional.html</loc>
-    
-    <lastmod>2018-12-31T12:54:11.000Z</lastmod>
     
   </url>
   

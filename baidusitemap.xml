@@ -4,8 +4,70 @@
 
     
   <url>
+    <loc>https://yumuzi.github.io/people-list.html</loc>
+    <lastmod>2019-01-12T01:25:33.694Z</lastmod>
+    <data>
+        <display>
+        <title>人物列表</title>
+        <pubTime>2019-01-12T01:11:22.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="文學" url="https://yumuzi.github.io/categories/%E6%96%87%E5%AD%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/shengyuanlun.html</loc>
+    <lastmod>2019-01-12T00:45:15.681Z</lastmod>
+    <data>
+        <display>
+        <title>生員論</title>
+        <pubTime>2019-01-12T00:37:29.000Z</pubTime>
+        
+        <tag>顧炎武</tag>
+         
+        <tag>顧亭林文集</tag>
+         
+         
+           
+             
+              <breadCrumb title="文學" url="https://yumuzi.github.io/categories/%E6%96%87%E5%AD%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/epub-simpletotraditional.html</loc>
+    <lastmod>2019-01-08T12:01:00.427Z</lastmod>
+    <data>
+        <display>
+        <title>Epub電子書簡體橫排轉繁體直排之步驟</title>
+        <pubTime>2018-12-31T12:10:08.000Z</pubTime>
+        
+        <tag>epub</tag>
+         
+        <tag>電子書</tag>
+         
+         
+           
+             
+              <breadCrumb title="技術" url="https://yumuzi.github.io/categories/%E6%8A%80%E8%A1%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://yumuzi.github.io/book-list.html</loc>
-    <lastmod>2019-01-07T12:57:32.754Z</lastmod>
+    <lastmod>2019-01-08T11:32:00.895Z</lastmod>
     <data>
         <display>
         <title>圖書清單</title>
@@ -87,28 +149,6 @@
            
              
               <breadCrumb title="文學" url="https://yumuzi.github.io/categories/%E6%96%87%E5%AD%B8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://yumuzi.github.io/epub-simpletotraditional.html</loc>
-    <lastmod>2018-12-31T12:54:11.000Z</lastmod>
-    <data>
-        <display>
-        <title>Epub電子書簡體橫排轉繁體直排之步驟</title>
-        <pubTime>2018-12-31T12:10:08.000Z</pubTime>
-        
-        <tag>epub</tag>
-         
-        <tag>電子書</tag>
-         
-         
-           
-             
-              <breadCrumb title="技術" url="https://yumuzi.github.io/categories/%E6%8A%80%E8%A1%93/"/>
           
         </display>
     </data>
