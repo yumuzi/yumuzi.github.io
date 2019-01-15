@@ -4,8 +4,60 @@
 
     
   <url>
+    <loc>https://yumuzi.github.io/sandaxingshu.html</loc>
+    <lastmod>2019-01-15T12:34:54.075Z</lastmod>
+    <data>
+        <display>
+        <title>「天下三大行書」</title>
+        <pubTime>2019-01-15T11:42:07.000Z</pubTime>
+        
+        <tag>蘇軾</tag>
+         
+        <tag>行書</tag>
+         
+        <tag>王羲之</tag>
+         
+        <tag>顏真卿</tag>
+         
+        <tag>蘭亭集序</tag>
+         
+        <tag>祭姪文稿</tag>
+         
+        <tag>寒食帖</tag>
+         
+         
+           
+             
+              <breadCrumb title="文學" url="https://yumuzi.github.io/categories/%E6%96%87%E5%AD%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/software-list.html</loc>
+    <lastmod>2019-01-14T02:47:57.000Z</lastmod>
+    <data>
+        <display>
+        <title>軟體清單</title>
+        <pubTime>2019-01-06T11:46:00.000Z</pubTime>
+        
+        <tag>軟體</tag>
+         
+         
+           
+             
+              <breadCrumb title="技術" url="https://yumuzi.github.io/categories/%E6%8A%80%E8%A1%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://yumuzi.github.io/people-list.html</loc>
-    <lastmod>2019-01-12T01:25:33.694Z</lastmod>
+    <lastmod>2019-01-13T11:11:45.184Z</lastmod>
     <data>
         <display>
         <title>人物列表</title>
@@ -100,26 +152,6 @@
         <tag>網站</tag>
          
         <tag>網頁</tag>
-         
-         
-           
-             
-              <breadCrumb title="技術" url="https://yumuzi.github.io/categories/%E6%8A%80%E8%A1%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://yumuzi.github.io/software-list.html</loc>
-    <lastmod>2019-01-06T11:51:12.337Z</lastmod>
-    <data>
-        <display>
-        <title>軟體清單</title>
-        <pubTime>2019-01-06T11:46:00.000Z</pubTime>
-        
-        <tag>軟體</tag>
          
          
            
@@ -872,9 +904,9 @@
         <title>Ubuntu 14.04 安装 Texlive2015</title>
         <pubTime>2016-05-04T07:49:53.000Z</pubTime>
         
-        <tag>ubuntu</tag>
-         
         <tag>latex</tag>
+         
+        <tag>ubuntu</tag>
          
          
            
@@ -1112,9 +1144,9 @@
         <title>Ubuntu14.04 + LaTeX 学习之路</title>
         <pubTime>2016-05-04T08:55:57.000Z</pubTime>
         
-        <tag>ubuntu</tag>
-         
         <tag>latex</tag>
+         
+        <tag>ubuntu</tag>
          
          
            
