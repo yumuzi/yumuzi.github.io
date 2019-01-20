@@ -4,6 +4,68 @@
 
     
   <url>
+    <loc>https://yumuzi.github.io/xinanliandajinianbei.html</loc>
+    <lastmod>2019-01-20T10:44:42.723Z</lastmod>
+    <data>
+        <display>
+        <title>國立西南聯合大學紀念碑碑文</title>
+        <pubTime>2019-01-20T10:25:39.000Z</pubTime>
+        
+        <tag>馮友蘭</tag>
+         
+         
+           
+             
+              <breadCrumb title="文學" url="https://yumuzi.github.io/categories/%E6%96%87%E5%AD%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/jishierlangwen.html</loc>
+    <lastmod>2019-01-20T10:36:39.367Z</lastmod>
+    <data>
+        <display>
+        <title>祭十二郎文</title>
+        <pubTime>2019-01-20T10:16:46.000Z</pubTime>
+        
+        <tag>韓愈</tag>
+         
+         
+           
+             
+              <breadCrumb title="文學" url="https://yumuzi.github.io/categories/%E6%96%87%E5%AD%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yumuzi.github.io/professional-books-list.html</loc>
+    <lastmod>2019-01-18T13:12:18.312Z</lastmod>
+    <data>
+        <display>
+        <title>專業圖書清單</title>
+        <pubTime>2019-01-18T03:36:17.000Z</pubTime>
+        
+        <tag>圖書</tag>
+         
+        <tag>清單</tag>
+         
+         
+           
+             
+              <breadCrumb title="學術" url="https://yumuzi.github.io/categories/%E5%AD%B8%E8%A1%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://yumuzi.github.io/sandaxingshu.html</loc>
     <lastmod>2019-01-15T12:34:54.075Z</lastmod>
     <data>
@@ -904,9 +966,9 @@
         <title>Ubuntu 14.04 安装 Texlive2015</title>
         <pubTime>2016-05-04T07:49:53.000Z</pubTime>
         
-        <tag>latex</tag>
-         
         <tag>ubuntu</tag>
+         
+        <tag>latex</tag>
          
          
            
@@ -1144,9 +1206,9 @@
         <title>Ubuntu14.04 + LaTeX 学习之路</title>
         <pubTime>2016-05-04T08:55:57.000Z</pubTime>
         
-        <tag>latex</tag>
-         
         <tag>ubuntu</tag>
+         
+        <tag>latex</tag>
          
          
            
