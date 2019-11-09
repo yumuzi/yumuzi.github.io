@@ -3,6 +3,46 @@
   
     
     <entry>
+      <title><![CDATA[天時地利人和]]></title>
+      <url>/tianshidilirenhe.html</url>
+      <content type="html"><![CDATA[<div align="center"><br>茫茫乾坤方圓幾何<br>長傳我 千百年 民族魂魄<br>舊日宮牆 尋常巷陌<br>是誰把英雄的故事一說再說<br>走馬揚鞭翻山過河<br>輕生死 重大義 男兒本色<br>幾番起落 風雨振作<br>趕他個天時地利與人和<br>走馬揚鞭翻山過河<br>輕生死 重大義 男兒本色<br>幾番起落 風雨振作<br>趕他個天時地利與人和<br>趕他個天時地利與人和<br></div>]]></content>
+      
+        <categories>
+            
+            <category> 文學 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 水滸傳 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[葬花吟]]></title>
+      <url>/zanghuayin.html</url>
+      <content type="html"><![CDATA[<div align="center"><br>〔清〕曹雪芹<br><br>花謝花飛花滿天，紅消香斷有誰憐？<br>游絲軟繫飄春榭，落絮輕沾撲繡簾。<br>閨中女兒惜春暮，愁緒滿懷無釋處，<br>手把花鋤出繡簾，忍踏落花來復去。<br>柳絲榆莢自芳菲，不管桃飄與李飛。<br>桃李明年能再發，明年閨中知有誰？<br>三月香巢已壘成，樑間燕子太無情！<br>明年花發雖可啄，卻不道人去樑空巢也傾。<br>一年三百六十日，風刀霜劍嚴相逼，<br>明媚鮮妍能幾時，一朝飄泊難尋覓。<br>花開易見落難尋，階前悶殺葬花人，<br>獨倚花鋤淚暗灑，灑上空枝見血痕。<br>杜鵑無語正黃昏，荷鋤歸去掩重門。<br>青燈照壁人初睡，冷雨敲窗被未溫。<br>怪奴底事倍傷神，半為怜春半惱春：<br>憐春忽至惱忽去，至又無言去不聞。<br>昨宵庭外悲歌發，知是花魂與鳥魂？<br>花魂鳥魂總難留，鳥自無言花自羞。<br>願奴脅下生雙翼，隨花飛到天盡頭。<br>天盡頭，何處有香丘？<br>未若錦囊收艷骨，一抔淨土掩風流。<br>質本潔來還潔去，強於污淖陷渠溝。<br>爾今死去儂收葬，未卜儂身何日喪？<br>儂今葬花人笑痴，他年葬儂知是誰？<br>試看春殘花漸落，便是紅顏老死時。<br>一朝春盡紅顏老，花落人亡兩不知！<br></div>]]></content>
+      
+        <categories>
+            
+            <category> 文學 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 紅樓夢 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[香港第一課]]></title>
       <url>/hongkongfirstlesson.html</url>
       <content type="html"><![CDATA[<p><a href="https://drive.google.com/open?id=1YVViIEmfH0ROFre4XcZNy9I3C6qfIPgt" target="_blank" rel="external">香港第一課 - 梁啟智.epub</a></p>
@@ -101,8 +141,6 @@
         <categories>
             
             <category> 社會 </category>
-            
-            <category> 文學 </category>
             
         </categories>
         
@@ -2694,11 +2732,11 @@
         
         <tags>
             
+            <tag> 水滸傳 </tag>
+            
             <tag> 金聖歎 </tag>
             
             <tag> 施耐庵 </tag>
-            
-            <tag> 水滸傳 </tag>
             
         </tags>
         
@@ -3782,9 +3820,9 @@
             
             <tag> 金庸 </tag>
             
-            <tag> 梁羽生 </tag>
-            
             <tag> 武俠 </tag>
+            
+            <tag> 梁羽生 </tag>
             
         </tags>
         
@@ -5627,11 +5665,11 @@
             
             <tag> hexo </tag>
             
+            <tag> blog </tag>
+            
             <tag> next </tag>
             
             <tag> theme </tag>
-            
-            <tag> blog </tag>
             
         </tags>
         
@@ -5787,9 +5825,9 @@
             
             <tag> python </tag>
             
-            <tag> blog </tag>
-            
             <tag> django </tag>
+            
+            <tag> blog </tag>
             
         </tags>
         
