@@ -1378,9 +1378,9 @@
     
       <category term="金庸" scheme="https://yumuzi.github.io/tags/%E9%87%91%E5%BA%B8/"/>
     
-      <category term="武俠" scheme="https://yumuzi.github.io/tags/%E6%AD%A6%E4%BF%A0/"/>
-    
       <category term="梁羽生" scheme="https://yumuzi.github.io/tags/%E6%A2%81%E7%BE%BD%E7%94%9F/"/>
+    
+      <category term="武俠" scheme="https://yumuzi.github.io/tags/%E6%AD%A6%E4%BF%A0/"/>
     
   </entry>
   
@@ -1978,11 +1978,11 @@
     
       <category term="hexo" scheme="https://yumuzi.github.io/tags/hexo/"/>
     
-      <category term="blog" scheme="https://yumuzi.github.io/tags/blog/"/>
-    
       <category term="next" scheme="https://yumuzi.github.io/tags/next/"/>
     
       <category term="theme" scheme="https://yumuzi.github.io/tags/theme/"/>
+    
+      <category term="blog" scheme="https://yumuzi.github.io/tags/blog/"/>
     
   </entry>
   
@@ -2016,9 +2016,9 @@
     
       <category term="python" scheme="https://yumuzi.github.io/tags/python/"/>
     
-      <category term="django" scheme="https://yumuzi.github.io/tags/django/"/>
-    
       <category term="blog" scheme="https://yumuzi.github.io/tags/blog/"/>
+    
+      <category term="django" scheme="https://yumuzi.github.io/tags/django/"/>
     
   </entry>
   
