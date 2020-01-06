@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yumuzi.github.io/software-list.html</loc>
+    
+    <lastmod>2020-01-05T12:03:33.712Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yumuzi.github.io/book-list.html</loc>
     
     <lastmod>2019-12-29T08:41:56.295Z</lastmod>
@@ -75,13 +82,6 @@
     <loc>https://yumuzi.github.io/shifajie.html</loc>
     
     <lastmod>2019-12-08T07:56:15.528Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yumuzi.github.io/software-list.html</loc>
-    
-    <lastmod>2019-12-08T07:00:25.020Z</lastmod>
     
   </url>
   
